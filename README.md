@@ -56,10 +56,63 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Fombra Insight is an EdTech consulting firm focused on advancing educational equity. We bring strategy, empathy, and contextual awareness to every partnership, helping schools and startups better serve underrepresented and underserved communities.</p>
-  </section>
+  <section id="services">
+  <h2>Our Services</h2>
+  <p>
+    We provide tactical, context-sensitive consulting services to school districts, educational technology startups, and any businesses that seek to serve the greater good. With a foundation based on improving equity, we specialize in the application of social strategy behind your products and curriculum.
+  </p>
+  <p>
+    It is our mission to ensure that all organizations are able to meet the diverse needs of students and clients within a world that is rapidly evolving. For many people, the simple expansion of opportunities by businesses and educational institutions can be life-changing.
+  </p>
+
+  <h3>📦 Package 1: Insight & Strategy Consulting</h3>
+
+  <ul>
+    <li>
+      <strong>Needs Assessment:</strong>  
+      Client call focused on understanding organization, goals, audience, and pain points.  
+      <br><em>You receive:</em> Summary of organizational points and initial insights/suggestions.
+    </li><br>
+
+    <li>
+      <strong>Contextual Insight Briefing:</strong>  
+      Research on what has worked in similar scenarios, relevant access/inclusion gaps, and case studies.  
+      <br><em>You receive:</em> 3–5 page Word/Doc with insights tailored to your goals and pain points.
+    </li><br>
+
+    <li>
+      <strong>AI/Tech Analysis:</strong>  
+      Evaluation of your current or potential use of educational tech and AI.  
+      <br><em>You receive:</em> Recommendations aligned to your mission and accessibility needs, plus risk/benefit analysis.
+    </li><br>
+
+    <li>
+      <strong>Stakeholder Interviews:</strong>  
+      Structured conversations with selected educators, leaders, or community members.  
+      <br><em>You receive:</em> A thematic summary of values, tensions, and opportunities for change.
+    </li><br>
+
+    <li>
+      <strong>Strategy Consultation:</strong>  
+      Client call focused on defining mission-aligned next steps.  
+      <br><em>You receive:</em> Verbal and written guidance linking goals to tools, timelines, and sustainable practices.
+    </li><br>
+
+    <li>
+      <strong>Blueprint Creation:</strong>  
+      Customized roadmap tailored to your context.  
+      <br><em>You receive:</em> 1–2 page strategy doc with short- and long-term steps, considering equity and capacity.
+    </li><br>
+
+    <li>
+      <strong>Ongoing Application Analysis:</strong>  
+      Light follow-up and support.  
+      <br><em>You receive:</em> Check-ins and notes on what's working, what's not, and how to adjust.
+    </li>
+  </ul>
+
+  <p><strong>💰 Package Price:</strong> Varies depending on financial need.</p>
+</section>
 
   <section id="services">
     <h2>Our Services</h2>
