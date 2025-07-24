@@ -1,34 +1,37 @@
+/* Header container */
 header {
-  position: sticky; /* or fixed */
+  position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(159, 226, 191, 0.5); /* seafoam green translucent */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(176, 224, 230, 0.3); /* baby blue translucent border */
+  background: rgba(159, 226, 191, 0.7); /* Seafoam green with transparency */
+  backdrop-filter: blur(8px);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  padding: 15px 30px;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header a {
-  color: rgba(30, 60, 60, 0.85); /* dark teal-ish for contrast */
+/* Logo styling */
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(0, 50, 50, 0.9); /* Dark teal for contrast */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Navigation links */
+header nav a {
+  color: rgba(0, 50, 50, 0.9); /* Dark teal */
   text-decoration: none;
-  margin: 0 1rem;
+  margin-left: 20px;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-header a:hover {
-  color: rgba(70, 130, 180, 1); /* bright baby blue on hover */
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: rgba(10, 90, 70, 0.9);
+/* Hover effect for navigation links */
+header nav a:hover {
+  color: rgba(70, 130, 180, 1); /* Baby blue on hover */
 }
