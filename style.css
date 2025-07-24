@@ -1,11 +1,10 @@
-/* style.css – Fombra visual theme */
 :root {
-  --primary: #2c5364;
-  --secondary: #7FB685;
-  --accent: #A3D2CA;
-  --background: #f5fafa;
-  --text: #222222;
-  --cta: #4C9F70;
+  --primary: #2f4f4f;         /* Deep blue-green for header text */
+  --secondary: #7fb685;       /* Muted green for nav */
+  --accent: #a3d2ca;          /* Soft teal for hover, buttons */
+  --background: #f0f8f7;      /* Pale green-blue background */
+  --text: #222;               /* Body text */
+  --cta: #4c9f70;             /* Calming green for call-to-actions */
 }
 
 body {
