@@ -46,9 +46,16 @@
 </head>
 <body>
   <header>
-    <h1>Fombra Insight</h1>
-    <p>Equity. Strategy. Context.</p>
-  </header>
+  <div class="header-container">
+    <div class="logo">Fombra Insight</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <nav>
     <a href="#about">About</a>
