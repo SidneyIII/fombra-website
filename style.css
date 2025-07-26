@@ -16,13 +16,15 @@ header {
   top: 0;
   z-index: 1000;
 }
+
+/* Force black text with white outline on header links */
 header, header a, header nav a, .hero-text {
-  color: black;
+  color: black !important;
   text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -1px -1px 0 #fff !important,
+    1px -1px 0 #fff !important,
+    -1px 1px 0 #fff !important,
+    1px 1px 0 #fff !important;
 }
 
 /* Header container */
@@ -47,7 +49,7 @@ nav a {
   margin-left: 2rem;
   font-weight: 600;
   text-decoration: none;
-  color: rgba(0, 50, 50, 0.9);
+  color: rgba(0, 50, 50, 0.9); /* This will be overridden by !important above */
   transition: color 0.3s ease;
 }
 
@@ -127,8 +129,10 @@ ul {
 ul li {
   margin-bottom: 0.5rem;
 }
+
 /* === Background Slideshow Animation === */
 body {
+  background-color: #111; /* dark fallback background */
   animation: fadeBackground 30s infinite;
   background-size: cover;
   background-position: center;
