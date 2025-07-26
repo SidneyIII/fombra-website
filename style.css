@@ -106,4 +106,19 @@ footer {
   padding: 2rem;
   color: #aaa;
   font-size: 0.9rem;
+} 
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
 }
