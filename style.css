@@ -27,11 +27,10 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: fadeSlideshow 25s infinite;
+  animation: fadeSlideshow 40s infinite;
   opacity: 0.2;
 }
 
-/* Fade Animation */
 @keyframes fadeSlideshow {
   0%    { background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg'); }
   20%   { background-image: url('https://images.pexels.com/photos/9242837/pexels-photo-9242837.jpeg'); }
