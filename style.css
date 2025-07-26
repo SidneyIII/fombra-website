@@ -1,162 +1,110 @@
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
-  color: #222;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header bar */
-header {
-  background: linear-gradient(90deg, #222, #555); /* dark gradient */
-  color: black; /* text color (overridden by outline) */
-  padding: 20px;
-  position: sticky;
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #111;
+  color: #f0f0f0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Slideshow */
+body::before {
+  content: "";
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeSlideshow 25s infinite;
+  opacity: 0.2;
 }
 
-/* Force black text with white outline on header links */
-header, header a, header nav a, .hero-text {
-  color: black !important;
-  text-shadow:
-    -1px -1px 0 #fff !important,
-    1px -1px 0 #fff !important,
-    -1px 1px 0 #fff !important,
-    1px 1px 0 #fff !important;
+/* Fade Animation */
+@keyframes fadeSlideshow {
+  0%    { background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg'); }
+  20%   { background-image: url('https://images.pexels.com/photos/9242837/pexels-photo-9242837.jpeg'); }
+  40%   { background-image: url('https://images.pexels.com/photos/9783353/pexels-photo-9783353.jpeg'); }
+  60%   { background-image: url('https://images.pexels.com/photos/5428302/pexels-photo-5428302.jpeg'); }
+  80%   { background-image: url('https://images.pexels.com/photos/7014769/pexels-photo-7014769.jpeg'); }
+  100%  { background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg'); }
 }
 
-/* Header container */
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Header Navigation */
+header {
+  background: linear-gradient(to right, #222, #333);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0 0 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Logo */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: rgba(0, 50, 50, 0.9);
-}
-
-/* Navigation */
-nav a {
-  margin-left: 2rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: rgba(0, 50, 50, 0.9); /* This will be overridden by !important above */
-  transition: color 0.3s ease;
-}
-
-/* Rounded corners for main sections */
-section,
-.hero,
-.about-section,
-.contact-section {
-  border-radius: 20px;
-  background: white;
-  padding: 40px;
-  margin: 40px auto;
-  width: 90%;
-  max-width: 1000px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: border-radius 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hero text styling with translucent background and outlined text */
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px 20px;
-  border-radius: 10px;
+/* Site Title */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: black;
-  text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
-  max-width: 700px;
-  margin: 0 auto 60px;
-  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white;
 }
 
-section:hover,
-.hero:hover,
-.about-section:hover {
-  border-radius: 30px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-}
-
-section {
-  transition: border-radius 0.3s ease, box-shadow 0.3s ease;
-}
-section:hover {
-  border-radius: 30px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+/* Navigation Links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: rgba(70, 130, 180, 1);
+  color: #1DB954;
 }
 
-/* Section styling */
+/* Sections */
 section {
-  padding: 80px 20px;
-  max-width: 800px;
+  padding: 4rem 2rem;
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 20px;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-section#hero {
-  padding-top: 120px; /* space below sticky header */
-  background: #eafaf1;
-}
-
+/* Section Headings */
 section h2 {
-  margin-bottom: 1rem;
+  text-align: center;
   font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Section Text */
+section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
 }
 
-ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* === Background Slideshow Animation === */
-body {
-  background-color: #111; /* dark fallback background */
-  animation: fadeBackground 30s infinite;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 1s ease-in-out;
-}
-
-@keyframes fadeBackground {
-  0% {
-    background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg');
-  }
-  20% {
-    background-image: url('https://images.pexels.com/photos/9242837/pexels-photo-9242837.jpeg');
-  }
-  40% {
-    background-image: url('https://images.pexels.com/photos/9783353/pexels-photo-9783353.jpeg');
-  }
-  60% {
-    background-image: url('https://images.pexels.com/photos/5428302/pexels-photo-5428302.jpeg');
-  }
-  80% {
-    background-image: url('https://images.pexels.com/photos/7014769/pexels-photo-7014769.jpeg');
-  }
-  100% {
-    background-image: url('https://images.pexels.com/photos/8294685/pexels-photo-8294685.jpeg'); /* Loop back */
-  }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #aaa;
+  font-size: 0.9rem;
 }
