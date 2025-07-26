@@ -9,14 +9,20 @@ html {
 
 /* Header bar */
 header {
+  background: linear-gradient(90deg, #222, #555); /* dark gradient */
+  color: black; /* text color (overridden by outline) */
+  padding: 20px;
   position: sticky;
   top: 0;
-  width: 100%;
-  background: linear-gradient(to right, rgba(159, 226, 191, 0.7), rgba(176, 224, 230, 0.7));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+header, header a, header nav a, .hero-text {
+  color: black;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 /* Header container */
@@ -58,6 +64,22 @@ section,
   max-width: 1000px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hero text styling with translucent background and outlined text */
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  border-radius: 10px;
+  color: black;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: 1.5rem;
 }
 
 section:hover,
