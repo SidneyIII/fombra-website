@@ -6,20 +6,21 @@ const images = [
   'assets/images/slide5.jpeg'
 ];
 
-const slideshow = document.getElementById('bg-slideshow');
 let currentIndex = 0;
+const bgElement = document.getElementById('bg-slideshow');
 
 function changeBackground() {
-  slideshow.style.opacity = 0;
+  bgElement.style.opacity = 0;
 
   setTimeout(() => {
-    slideshow.style.backgroundImage = `url(${images[currentIndex]})`;
-    slideshow.style.opacity = 1;
-
     currentIndex = (currentIndex + 1) % images.length;
-  }, 1500);
+    bgElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+    bgElement.style.opacity = 1;
+  }, 500); // match with CSS transition time (0.5s fade)
 }
 
-slideshow.style.backgroundImage = `url(${images[0]})`;
+// Initial background image
+bgElement.style.backgroundImage = `url('${images[0]}')`;
 
-setInterval(changeBackground, 5000);
+// Start the slideshow
+setInterval(changeBackground, 4000); // 4 seconds per image (adjust as needed)
