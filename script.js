@@ -7,20 +7,30 @@ const images = [
 ];
 
 let currentIndex = 0;
-const bgElement = document.getElementById('bg-slideshow');
+let showingFirst = true;
 
-function changeBackground() {
-  bgElement.style.opacity = 0;
+const bg1 = document.getElementById('bg1');
+const bg2 = document.getElementById('bg2');
 
-  setTimeout(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    bgElement.style.backgroundImage = `url('${images[currentIndex]}')`;
-    bgElement.style.opacity = 1;
-  }, 500); // match with CSS transition time (0.5s fade)
+// Set initial image
+bg1.style.backgroundImage = `url('${images[0]}')`;
+bg1.style.opacity = 1;
+
+function crossfade() {
+  currentIndex = (currentIndex + 1) % images.length;
+  const nextImage = images[currentIndex];
+
+  if (showingFirst) {
+    bg2.style.backgroundImage = `url('${nextImage}')`;
+    bg2.style.opacity = 1;
+    bg1.style.opacity = 0;
+  } else {
+    bg1.style.backgroundImage = `url('${nextImage}')`;
+    bg1.style.opacity = 1;
+    bg2.style.opacity = 0;
+  }
+
+  showingFirst = !showingFirst;
 }
 
-// Initial background image
-bgElement.style.backgroundImage = `url('${images[0]}')`;
-
-// Start the slideshow
-setInterval(changeBackground, 4000); // 4 seconds per image (adjust as needed)
+setInterval(crossfade, 4000); // Change image every 4 seconds
