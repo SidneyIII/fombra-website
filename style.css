@@ -21,8 +21,9 @@ body, html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 0.7s ease-in-out;
   opacity: 1;
+  filter: blur(6px); /* Soft blur for style */
 }
 
 /* Header Navigation */
