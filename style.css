@@ -1,3 +1,4 @@
+/* Reset & Box Sizing */
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +48,6 @@ header {
   z-index: 100;
 }
 
-/* Site Title */
 header h1 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -55,7 +55,6 @@ header h1 {
   text-shadow: 1px 1px 0 white, -1px -1px 0 white;
 }
 
-/* Navigation Links */
 nav a {
   color: #fff;
   text-decoration: none;
@@ -68,47 +67,23 @@ nav a:hover {
   color: #1DB954;
 }
 
-/* Page Sections */
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: 2rem auto 0 auto;
-  background-color: rgba(30, 30, 30, 0.75);
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
-
-/* Section Headings */
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-/* Section Text */
-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ddd;
-}
-
+/* Hero Logo Overlay Section */
 .hero-logo-overlay {
-  position: relative; /* changed from absolute */
+  position: relative;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  padding: 4rem 0; /* adds vertical space */
+  padding: 4rem 0;
   pointer-events: none;
 }
 
 .hero-logo-content {
   text-align: center;
   color: white;
-  pointer-events: auto; /* allows interaction if needed */
+  pointer-events: auto;
 }
 
 .hero-logo-image {
@@ -123,6 +98,29 @@ section p {
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
+}
+
+/* Page Sections */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 2rem auto 0 auto;
+  background-color: rgba(30, 30, 30, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
 }
 
 /* Footer */
