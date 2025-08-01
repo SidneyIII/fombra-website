@@ -110,17 +110,21 @@ nav a:hover {
 .hero-button {
   text-decoration: none;
   padding: 12px 24px;
-  background-color: white;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.5); /* dark translucent background */
+  color: white;
   font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8); /* white translucent border */
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* soft white glow */
+  transition: all 0.3s ease;
   font-size: 1rem;
 }
 
 .hero-button:hover {
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+  border-color: white;
 }
 
 /* Page Sections */
