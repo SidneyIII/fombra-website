@@ -110,7 +110,7 @@ nav a:hover {
 .hero-button {
   text-decoration: none;
   padding: 12px 24px;
-  background-color: black; /* solid black background */
+  background-color: none
   color: white;
   font-weight: 600;
   border: 2px solid rgba(255, 255, 255, 0.8); /* white translucent border */
