@@ -35,11 +35,12 @@ body, html {
   transition: opacity 0.8s ease-in-out;
 }
 
+/* Header Navigation */
 header {
-  background: rgba(0, 0, 0, 0.7); /* translucent black */
+  background: linear-gradient(to right, #222, #333);
   padding: 1rem 2rem;
   display: flex;
-  justify-content: center; /* center the nav */
+  justify-content: space-between;
   align-items: center;
   border-radius: 0 0 20px 20px;
   position: sticky;
@@ -47,14 +48,17 @@ header {
   z-index: 100;
 }
 
-nav {
-  display: flex;
-  gap: 2rem;
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: black;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
+  margin-left: 1.5rem;
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -63,40 +67,37 @@ nav a:hover {
   color: #1DB954;
 }
 
+/* Hero Logo Overlay Section */
 .hero-logo-overlay {
   position: relative;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 0;
   z-index: 2;
+  padding: 4rem 0;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.6); /* translucent black background */
 }
 
 .hero-logo-content {
   text-align: center;
   color: white;
   pointer-events: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .hero-logo-image {
-  max-width: 600px;
-  width: 90%;
+  max-width: 300px;
+  width: 80%;
   height: auto;
-  margin-bottom: 1rem; /* tightened spacing */
+  margin-bottom: 1rem;
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
-  margin-bottom: 1.2rem; /* adds space before buttons */
 }
 
 /* Page Sections */
