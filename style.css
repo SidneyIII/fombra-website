@@ -110,7 +110,7 @@ nav a:hover {
 .hero-button {
   text-decoration: none;
   padding: 12px 24px;
-  background-color: rgba(0, 0, 0, 0.5); /* dark translucent background */
+  background-color: black; /* solid black background */
   color: white;
   font-weight: 600;
   border: 2px solid rgba(255, 255, 255, 0.8); /* white translucent border */
@@ -121,8 +121,8 @@ nav a:hover {
 }
 
 .hero-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background-color: #222; /* slightly lighter black on hover */
+  color: white;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
   border-color: white;
 }
