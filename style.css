@@ -69,13 +69,16 @@ nav a:hover {
 
 /* Hero Logo Overlay Section */
 .hero-logo-overlay {
-  position: relative;
+  position: absolute; /* Changed from relative */
+  top: 40px; /* Moves the logo toward the top */
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  padding: 4rem 0;
+  padding: 0; /* Remove bottom spacing that pushes it down */
   pointer-events: none;
 }
 
