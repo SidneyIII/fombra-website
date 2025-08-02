@@ -40,7 +40,7 @@ header {
   background: linear-gradient(to right, #222, #333);
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 👈 center the nav links */
   align-items: center;
   border-radius: 0 0 20px 20px;
   position: sticky;
