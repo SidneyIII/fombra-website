@@ -86,10 +86,10 @@ nav a:hover {
 }
 
 .hero-logo-image {
-  max-width: 300px;
+  max-width: 600px; /* Doubled from 300px */
   width: 80%;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced to bring tagline closer */
 }
 
 .hero-tagline {
@@ -97,8 +97,8 @@ nav a:hover {
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
+  margin-top: 0; /* Optional: ensure no extra space is added */
 }
-
 /* Page Sections */
 section {
   padding: 4rem 2rem;
