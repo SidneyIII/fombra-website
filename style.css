@@ -70,12 +70,12 @@ nav a:hover {
 /* Hero Logo Overlay Section */
 .hero-logo-overlay {
   position: relative;
-  width: fit-content;
-  margin: 2rem auto 0 auto; /* Added margin-top to push it up */
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
-  padding: 1.5rem 3rem; /* Slightly less vertical padding */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  padding: 4rem 0;
   pointer-events: none;
 }
 
@@ -129,3 +129,4 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
+
