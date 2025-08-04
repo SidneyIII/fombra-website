@@ -127,27 +127,34 @@ nav a:hover {
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: bold;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #444; /* Dark gray */
+  color: #f0f0f0;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* Hover effect */
+/* Hover Effect for Primary */
 .hero-btn:hover {
-  background-color: #0056b3;
+  background-color: #666;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
 /* Secondary Button Variant */
 .hero-btn.secondary {
-  background-color: #f8f9fa;
-  color: #333;
-  border: 2px solid #ccc;
+  background-color: transparent;
+  border: 2px solid #666;
+  color: #ccc;
 }
 
+/* Hover Effect for Secondary */
 .hero-btn.secondary:hover {
-  background-color: #e2e6ea;
-  color: #000;
+  background-color: #333;
+  color: #fff;
+  border-color: #999;
 }
 
 /* Page Sections */
