@@ -122,14 +122,14 @@ nav a:hover {
   gap: 1rem;
 }
 
-/* Hero Button Base */
+/* Base Style for Both Buttons */
 .hero-btn {
   padding: 0.75rem 1.5rem;
-  border-radius: 999px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  background-color: #444; /* Dark gray */
+  background-color: #444;
   color: #f0f0f0;
   border: 2px solid transparent;
   transition: all 0.3s ease;
@@ -148,6 +148,7 @@ nav a:hover {
   background-color: transparent;
   border: 2px solid #666;
   color: #ccc;
+  border-radius: 8px;
 }
 
 /* Hover Effect for Secondary */
