@@ -114,6 +114,42 @@ nav a:hover {
   z-index: 1;
 }
 
+/* Hero Buttons Container */
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Hero Button Base */
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.hero-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary Button Variant */
+.hero-btn.secondary {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 2px solid #ccc;
+}
+
+.hero-btn.secondary:hover {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
 /* Page Sections */
 section {
   padding: 4rem 2rem;
