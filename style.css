@@ -53,7 +53,8 @@ nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 1.5rem;
-  font-weight: 600;
+  font-weight: 800; /* Extra bold weight to match hero tagline */
+  font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; /* Montserrat as primary font */
   transition: color 0.3s;
 }
 nav a:hover {
