@@ -4,13 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* Basic HTML and Body Setup */
 body, html {
   height: 100%;
   overflow-x: hidden;
 }
-
 /* Background Slideshow Container */
 #bg-slideshow {
   position: fixed;
@@ -21,7 +19,6 @@ body, html {
   z-index: -1;
   overflow: hidden;
 }
-
 .bg-layer {
   position: absolute;
   top: 0;
@@ -34,7 +31,6 @@ body, html {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
-
 /* Header Navigation */
 header {
   background: linear-gradient(to right, #222, #333);
@@ -47,14 +43,12 @@ header {
   top: 0;
   z-index: 100;
 }
-
 header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: black;
   text-shadow: 1px 1px 0 white, -1px -1px 0 white;
 }
-
 nav a {
   color: #fff;
   text-decoration: none;
@@ -62,11 +56,9 @@ nav a {
   font-weight: 600;
   transition: color 0.3s;
 }
-
 nav a:hover {
   color: #1DB954;
 }
-
 /* Hero Logo Overlay Section */
 .hero-logo-overlay {
   position: absolute; /* Changed from relative */
@@ -81,20 +73,17 @@ nav a:hover {
   padding: 0; /* Remove bottom spacing that pushes it down */
   pointer-events: none;
 }
-
 .hero-logo-content {
   text-align: center;
   color: white;
   pointer-events: auto;
 }
-
 .hero-logo-image {
   max-width: 600px; /* Doubled from 300px */
   width: 80%;
   height: auto;
   margin-bottom: 0.5rem; /* Reduced to bring tagline closer */
 }
-
 .hero-tagline {
   font-size: 1.25rem;
   font-weight: 300;
@@ -102,7 +91,6 @@ nav a:hover {
   color: white;
   margin-top: 0; /* Optional: ensure no extra space is added */
 }
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -113,51 +101,45 @@ nav a:hover {
   position: relative;
   z-index: 1;
 }
-
 /* Hero Buttons Container */
 .hero-buttons {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.75rem; /* Increased gap to accommodate larger buttons */
 }
-
-/* Base Style for Both Buttons */
+/* Base Style for Both Buttons - ENLARGED 1.75x */
 .hero-btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 1.31rem 2.63rem; /* 1.75x larger: 0.75*1.75=1.31, 1.5*1.75=2.63 */
+  border-radius: 14px; /* 1.75x larger: 8*1.75=14 */
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.75rem; /* 1.75x larger: 1*1.75=1.75 */
   background-color: #444;
   color: #f0f0f0;
   border: 2px solid transparent;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
-
 /* Hover Effect for Primary */
 .hero-btn:hover {
   background-color: #666;
   color: #fff;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
-
 /* Secondary Button Variant */
 .hero-btn.secondary {
   background-color: transparent;
   border: 2px solid #666;
   color: #ccc;
-  border-radius: 8px;
+  border-radius: 14px; /* 1.75x larger: 8*1.75=14 */
 }
-
 /* Hover Effect for Secondary */
 .hero-btn.secondary:hover {
   background-color: #333;
   color: #fff;
   border-color: #999;
 }
-
 /* Page Sections */
 section {
   padding: 4rem 2rem;
@@ -167,20 +149,17 @@ section {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
-
 section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #fff;
 }
-
 section p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #ddd;
 }
-
 /* Footer */
 footer {
   text-align: center;
