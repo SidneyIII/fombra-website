@@ -86,8 +86,8 @@ nav a:hover {
 }
 .hero-tagline {
   font-size: 1.25rem;
-  font-weight: 700; /* Bold weight for stronger appearance */
-  font-family: 'Arial', 'Helvetica', sans-serif; /* Clean, straight font */
+  font-weight: 800; /* Extra bold weight */
+  font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; /* Montserrat as primary font */
   letter-spacing: 2px; /* Increased letter spacing for logo-like appearance */
   text-transform: uppercase; /* All capital letters */
   color: white;
