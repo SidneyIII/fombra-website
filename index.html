@@ -38,6 +38,108 @@
 
     /* Responsive Design for Mobile and Tablets */
     @media screen and (max-width: 768px) {
+      /* Hide desktop navigation on mobile */
+      #desktop-nav {
+        display: none !important;
+      }
+      
+      /* Show mobile navigation container */
+      #mobile-nav-container {
+        display: block !important;
+      }
+      
+      /* Header adjustments for mobile */
+      header {
+        padding: 15px 20px !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        position: relative !important;
+      }
+      
+      /* Hamburger button styling */
+      #hamburger-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-around !important;
+        width: 30px !important;
+        height: 30px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        z-index: 1001 !important;
+      }
+      
+      #hamburger-btn span {
+        display: block !important;
+        height: 3px !important;
+        width: 100% !important;
+        background-color: white !important;
+        border-radius: 3px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hamburger animation when active */
+      #hamburger-btn.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px) !important;
+      }
+      
+      #hamburger-btn.active span:nth-child(2) {
+        opacity: 0 !important;
+      }
+      
+      #hamburger-btn.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px) !important;
+      }
+      
+      /* Mobile navigation menu */
+      #mobile-nav {
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        background-color: rgba(0, 0, 0, 0.95) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+        padding: 20px 0 !important;
+        min-width: 200px !important;
+        z-index: 1000 !important;
+        transform: translateY(-10px) !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      }
+      
+      #mobile-nav.mobile-nav-hidden {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-20px) !important;
+      }
+      
+      #mobile-nav.mobile-nav-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+      }
+      
+      #mobile-nav a {
+        display: block !important;
+        padding: 12px 20px !important;
+        color: white !important;
+        text-decoration: none !important;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 1em !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        transition: background-color 0.3s ease !important;
+      }
+      
+      #mobile-nav a:last-child {
+        border-bottom: none !important;
+      }
+      
+      #mobile-nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+      }
+
       /* Services Section - Stack vertically on mobile */
       #services > div {
         flex-direction: column !important;
@@ -95,18 +197,6 @@
         text-align: center !important;
       }
 
-      /* Navigation adjustments */
-      nav {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
-      }
-      
-      nav a {
-        font-size: 0.9em !important;
-        padding: 8px 12px !important;
-      }
-
       /* General section padding adjustments */
       section {
         margin: 20px auto !important;
@@ -115,6 +205,18 @@
       section[style*="max-width: 1200px"] {
         max-width: 95% !important;
         padding: 40px 15px !important;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      /* Hide mobile navigation on desktop */
+      #mobile-nav-container {
+        display: none !important;
+      }
+      
+      /* Show desktop navigation */
+      #desktop-nav {
+        display: flex !important;
       }
     }
 
@@ -166,13 +268,29 @@
 
   <!-- Header -->
   <header>
-    <nav>
+    <nav id="desktop-nav">
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
       <a href="#about-founder">About the Founder</a>
       <a href="#mission">Mission</a>
       <a href="#contact">Contact</a>
     </nav>
+    
+    <!-- Mobile Hamburger Menu -->
+    <div id="mobile-nav-container">
+      <button id="hamburger-btn" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mobile-nav" class="mobile-nav-hidden">
+        <a href="#services" onclick="closeMobileNav()">Services</a>
+        <a href="#why-us" onclick="closeMobileNav()">Why Us</a>
+        <a href="#about-founder" onclick="closeMobileNav()">About the Founder</a>
+        <a href="#mission" onclick="closeMobileNav()">Mission</a>
+        <a href="#contact" onclick="closeMobileNav()">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
