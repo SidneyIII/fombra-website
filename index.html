@@ -9,6 +9,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  
+  <!-- Scroll Animation Styles -->
+  <style>
+    .scroll-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-in-out;
+    }
+    
+    .scroll-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .scroll-section.slide-left {
+      transform: translateX(-50px);
+    }
+    
+    .scroll-section.slide-right {
+      transform: translateX(50px);
+    }
+    
+    .scroll-section.slide-left.visible,
+    .scroll-section.slide-right.visible {
+      transform: translateX(0);
+    }
+  </style>
 </head>
 <body>
   <!-- Background Slideshow -->
@@ -51,7 +78,7 @@
   </section>
 
  <!-- Services Section - MOVED TO FIRST -->
-<section id="services" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
+<section id="services" class="scroll-section" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
   <div style="display: flex; width: 100vw; gap: 30px; padding: 40px 20px; box-sizing: border-box;">
     
     <!-- Left Box - Services Description -->
@@ -121,7 +148,7 @@
 </section>
 
    <!-- Why Us Section - Updated with Dark Theme, Centered -->
-   <section id="why-us" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+   <section id="why-us" class="scroll-section slide-left" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
     <div style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">Why Us?</h2>
       <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
@@ -143,7 +170,7 @@
   </section>
     
    <!-- About The Founder Section - Updated with Dark Theme, Centered -->
-  <section id="about-founder" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.65); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+  <section id="about-founder" class="scroll-section slide-right" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.65); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
     <div style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">About The Founder</h2>
       <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
@@ -159,7 +186,7 @@
   </section>
 
     <!-- Mission Section - Updated with Dark Theme, Centered -->
-  <section id="mission" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.7); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+  <section id="mission" class="scroll-section" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.7); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
     <div style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">Our Mission</h2>
       <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
@@ -200,7 +227,7 @@
   </section>
 
   <!-- Contact Section - Updated with Dark Theme, Centered -->
-  <section id="contact" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+  <section id="contact" class="scroll-section slide-left" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">
       <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px;">Contact</h2>
       <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.2em; margin-bottom: 15px;">
@@ -227,5 +254,30 @@
   </footer>
 
   <script src="script.js"></script>
+  
+  <!-- Scroll Animation Script -->
+  <script>
+    // Scroll animation functionality
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollSections = document.querySelectorAll('.scroll-section');
+      scrollSections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
