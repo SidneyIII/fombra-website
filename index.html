@@ -36,6 +36,16 @@
       transform: translateX(0);
     }
 
+    /* Header styling updates */
+    header {
+      padding: 30px 20px !important; /* Increased from default padding for 1.5x thickness */
+    }
+    
+    /* Desktop navigation styling */
+    #desktop-nav a {
+      text-transform: uppercase !important; /* Capitalize all navigation words */
+    }
+
     /* Responsive Design for Mobile and Tablets */
     @media screen and (max-width: 768px) {
       /* Hide desktop navigation on mobile */
@@ -49,9 +59,9 @@
         position: relative !important;
       }
       
-      /* Header adjustments for mobile */
+      /* Header adjustments for mobile - increased padding for thickness */
       header {
-        padding: 15px 20px !important;
+        padding: 22px 20px !important; /* Increased from 15px for 1.5x thickness */
         display: flex !important;
         justify-content: flex-end !important;
         align-items: center !important;
@@ -140,6 +150,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
         transition: all 0.3s ease !important;
         white-space: nowrap !important;
+        text-transform: uppercase !important; /* Capitalize mobile nav words */
       }
       
       #mobile-nav a:last-child {
