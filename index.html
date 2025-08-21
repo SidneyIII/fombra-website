@@ -12,6 +12,32 @@
   
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
+<!-- Add this CSS to your existing <style> section in the <head> -->
+<style>
+  /* Hero Logo Styling */
+  .hero-logo-image {
+    width: 400px; /* Increased from default - adjust this value to make it larger or smaller */
+    max-width: 80vw; /* Ensures it doesn't overflow on mobile devices */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
+  }
+
+  /* Mobile responsive adjustments for the logo */
+  @media screen and (max-width: 768px) {
+    .hero-logo-image {
+      width: 300px; /* Slightly smaller on tablets */
+      max-width: 70vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero-logo-image {
+      width: 250px; /* Even smaller on phones */
+      max-width: 85vw;
+    }
+  }
+
     .scroll-section {
       opacity: 0;
       transform: translateY(50px);
