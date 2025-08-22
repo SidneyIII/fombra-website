@@ -99,7 +99,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: flex-start; /* aligns content to the top */
   align-items: center;
-  min-height: 60vh; /* 60% of the screen height */
+  min-height: 90vh; /* 90% of the screen height */
   padding-top: 3rem; /* adjust spacing */
   position: relative;
   z-index: 1;
