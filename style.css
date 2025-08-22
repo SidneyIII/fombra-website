@@ -97,10 +97,10 @@ nav a:hover {
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* 👈 center vertically instead of flex-start */
+  justify-content: flex-start; /* aligns content to the top */
   align-items: center;
-  min-height: 90vh;          /* or 70vh, etc. */
-  padding-top: 0;            /* remove the forced offset */
+  min-height: 100vh; /* full height of the screen */
+  padding-top: 4rem; /* adjust to move the logo higher/lower */
   position: relative;
   z-index: 1;
 }
@@ -170,3 +170,4 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
+
