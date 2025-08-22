@@ -99,8 +99,8 @@ nav a:hover {
   flex-direction: column;
   justify-content: flex-start; /* aligns content to the top */
   align-items: center;
-  min-height: 100vh; /* full height of the screen */
-  padding-top: 4rem; /* adjust to move the logo higher/lower */
+  min-height: 60vh; /* 60% of the screen height */
+  padding-top: 3rem; /* adjust spacing */
   position: relative;
   z-index: 1;
 }
