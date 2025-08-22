@@ -97,10 +97,10 @@ nav a:hover {
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* aligns content to the top */
+  justify-content: center;   /* 👈 center vertically instead of flex-start */
   align-items: center;
-  min-height: 90vh; /* 90% of the screen height */
-  padding-top: 3rem; /* adjust spacing */
+  min-height: 90vh;          /* or 70vh, etc. */
+  padding-top: 0;            /* remove the forced offset */
   position: relative;
   z-index: 1;
 }
