@@ -360,117 +360,100 @@
   </footer>
 
   <script>
-    // Sample data matching your Airtable structure
-    const districts = [
-      {
-        district_name: "Houston ISD",
-        enrollment: 187000,
-        title_1_status: "Title I",
-        demographics: { low_income_percentage: 65, english_learners: 25, minority_percentage: 80 },
-        special_ed_percentage: 12.5,
-        assessment_scores: { staar_passing_rate: 65, meets_grade_level: 45 },
-        compliance_areas: ["Title I", "Special Education", "Assessment"],
-        compliance_risk_score: 8.2,
-        contact_email: "compliance@houstonisd.org"
-      },
-      {
-        district_name: "Dallas ISD",
-        enrollment: 145000,
-        title_1_status: "Title I", 
-        demographics: { low_income_percentage: 65, english_learners: 15, minority_percentage: 80 },
-        special_ed_percentage: 12.5,
-        assessment_scores: { staar_passing_rate: 65, meets_grade_level: 45 },
-        compliance_areas: ["Title I", "Special Education", "Assessment"],
-        compliance_risk_score: 7.9,
-        contact_email: "compliance@dallasisd.org"
-      },
-      {
-        district_name: "Cypress-Fairbanks ISD",
-        enrollment: 118000,
-        title_1_status: "Non-Title I",
-        demographics: { low_income_percentage: 35, english_learners: 15, minority_percentage: 45 },
-        special_ed_percentage: 12.5,
-        assessment_scores: { staar_passing_rate: 75, meets_grade_level: 58 },
-        compliance_areas: ["Special Education", "Assessment"],
-        compliance_risk_score: 4.1,
-        contact_email: "compliance@cfisd.net"
-      },
-      {
-        district_name: "Austin ISD",
-        enrollment: 75000,
-        title_1_status: "Non-Title I",
-        demographics: { low_income_percentage: 35, english_learners: 15, minority_percentage: 45 },
-        special_ed_percentage: 12.5,
-        assessment_scores: { staar_passing_rate: 72, meets_grade_level: 55 },
-        compliance_areas: ["Special Education", "Assessment"],
-        compliance_risk_score: 5.2,
-        contact_email: "compliance@austinisd.org"
-      },
-      {
-        district_name: "Katy ISD",
-        enrollment: 87000,
-        title_1_status: "Non-Title I",
-        demographics: { low_income_percentage: 25, english_learners: 12, minority_percentage: 40 },
-        special_ed_percentage: 11.8,
-        assessment_scores: { staar_passing_rate: 85, meets_grade_level: 70 },
-        compliance_areas: ["Special Education", "Assessment"],
-        compliance_risk_score: 2.8,
-        contact_email: "compliance@katyisd.org"
-      }
-    ];
+    // Airtable Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
+    const AIRTABLE_API_TOKEN = 'patpH7T3odRRJhZEJ.0616a11f2b1f08c65b6116361ebe92ac53e0ebb457529ef8a2478b0990dfcaf1'; // Replace with your token (pat_...)
+    const AIRTABLE_BASE_ID = 'appPVW4mHMsqAnpqa'; // Replace with your base ID (app_...)
+    
+    // Global variables to store fetched data
+    let districts = [];
+    let regulations = [];
+    let dataLoaded = false;
 
-    const regulations = [
-      {
-        category: "Title I",
-        requirement: "Districts with >40% low-income students must develop comprehensive needs assessment",
-        applies_to: "High-poverty districts",
-        deadline: "Annually by August 1st",
-        penalty: "Loss of federal funding",
-        texas_code: "TAC Title 19, Chapter 102",
-        complexity_score: 7,
-        cost_impact: "High"
-      },
-      {
-        category: "Special Education",
-        requirement: "IEP meetings must include general education teacher",
-        applies_to: "All districts serving special education students",
-        deadline: "Within 30 days of referral",
-        penalty: "OCR compliance violation",
-        texas_code: "TAC Title 19, Chapter 89",
-        complexity_score: 5,
-        cost_impact: "Medium"
-      },
-      {
-        category: "Assessment",
-        requirement: "STAAR testing accommodations must be documented in IEP or 504 plan",
-        applies_to: "All districts",
-        deadline: "Before each testing window",
-        penalty: "Invalid test scores",
-        texas_code: "TAC Title 19, Chapter 101",
-        complexity_score: 6,
-        cost_impact: "Medium"
-      },
-      {
-        category: "Title I",
-        requirement: "Parent engagement policy must be developed with meaningful consultation",
-        applies_to: "Title I districts",
-        deadline: "Updated annually",
-        penalty: "Federal program review finding",
-        texas_code: "TAC Title 19, Chapter 102",
-        complexity_score: 4,
-        cost_impact: "Low"
-      },
-      {
-        category: "Special Education",
-        requirement: "Transition services must begin by age 16 in IEP",
-        applies_to: "All districts",
-        deadline: "By student's 16th birthday",
-        penalty: "Due process complaint risk",
-        texas_code: "TAC Title 19, Chapter 89",
-        complexity_score: 6,
-        cost_impact: "Medium"
+    // Fetch data from Airtable on page load
+    async function loadAirtableData() {
+      try {
+        showLoading();
+        
+        // Fetch districts data
+        const districtsResponse = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/District%20Data`, {
+          headers: {
+            'Authorization': `Bearer ${AIRTABLE_API_TOKEN}`
+          }
+        });
+        
+        if (!districtsResponse.ok) {
+          throw new Error(`Districts API error: ${districtsResponse.status}`);
+        }
+        
+        const districtsData = await districtsResponse.json();
+        
+        // Fetch regulations data
+        const regulationsResponse = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/District%20Regulations`, {
+          headers: {
+            'Authorization': `Bearer ${AIRTABLE_API_TOKEN}`
+          }
+        });
+        
+        if (!regulationsResponse.ok) {
+          throw new Error(`Regulations API error: ${regulationsResponse.status}`);
+        }
+        
+        const regulationsData = await regulationsResponse.json();
+        
+        // Transform Airtable data to match your format
+        districts = districtsData.records.map(record => ({
+          district_name: record.fields.district_name || '',
+          enrollment: record.fields.enrollment || 0,
+          title_1_status: record.fields.title_1_status || '',
+          demographics: typeof record.fields.demographics === 'string' 
+            ? JSON.parse(record.fields.demographics) 
+            : record.fields.demographics || {},
+          special_ed_percentage: record.fields.special_ed_percentage || 0,
+          assessment_scores: typeof record.fields.assessment_scores === 'string' 
+            ? JSON.parse(record.fields.assessment_scores) 
+            : record.fields.assessment_scores || {},
+          compliance_areas: typeof record.fields.compliance_areas === 'string'
+            ? JSON.parse(record.fields.compliance_areas)
+            : record.fields.compliance_areas || [],
+          compliance_risk_score: record.fields['Compliance Risk Score'] || 0,
+          contact_email: record.fields['Contact Email'] || ''
+        }));
+        
+        regulations = regulationsData.records.map(record => ({
+          category: record.fields.category || '',
+          requirement: record.fields.requirement || '',
+          applies_to: record.fields.applies_to || '',
+          deadline: record.fields.deadline || '',
+          penalty: record.fields.penalty || '',
+          texas_code: record.fields.texas_code || '',
+          complexity_score: record.fields['Complexity Score'] || 0,
+          cost_impact: record.fields['Cost Impact'] || ''
+        }));
+        
+        dataLoaded = true;
+        
+        // Clear loading message
+        document.getElementById('resultsContainer').innerHTML = `
+          <div class="no-results">
+            Data loaded successfully! Enter a search term above or click one of the example searches to get started.
+          </div>
+        `;
+        
+      } catch (error) {
+        console.error('Error loading Airtable data:', error);
+        document.getElementById('resultsContainer').innerHTML = `
+          <div class="no-results" style="color: #ff6666;">
+            Error loading data: ${error.message}<br>
+            <small>Please check your Airtable API credentials and try again.</small>
+          </div>
+        `;
       }
-    ];
+    }
+    
+    // Load data when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAirtableData();
+    });
 
     function searchCompliance() {
       const query = document.getElementById('searchInput').value.trim().toLowerCase();
