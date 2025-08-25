@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo - Fombra Insight</title>
+  <!-- Google Fonts for Montserrat Extra Bold -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Base styling matching your main site */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      min-height: 100vh;
+      padding-top: 90px;
+      color: white;
+    }
+
+    /* Header matching your main site */
+    header {
+      padding: 30px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 0;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    #desktop-nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    #desktop-nav a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    #desktop-nav a:hover {
+      color: #0066cc;
+    }
+
+    /* Demo container */
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Hero section for demo */
+    .demo-hero {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .demo-hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .demo-hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      font-weight: 800;
+      opacity: 0.9;
+    }
+
+    /* Search section */
+    .search-section {
+      background-color: rgba(40, 40, 40, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #searchInput {
+      flex: 1;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
+
+    #searchBtn {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #0066cc, #004499);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #searchBtn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Example searches */
+    .example-searches {
+      margin-bottom: 30px;
+    }
+
+    .example-searches h3 {
+      margin-bottom: 15px;
+      font-size: 1.3em;
+      font-weight: 800;
+    }
+
+    .example-btn {
+      display: inline-block;
+      margin: 5px 10px 5px 0;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .example-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Results section */
+    .results-section {
+      background-color: rgba(60, 60, 60, 0.7);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      min-height: 200px;
+    }
+
+    .results-section h3 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      font-weight: 800;
+    }
+
+    .result-item {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 4px solid #0066cc;
+    }
+
+    .result-item h4 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #66ccff;
+      font-weight: 800;
+    }
+
+    .result-item p {
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .result-meta {
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .loading {
+      text-align: center;
+      font-size: 1.1em;
+      padding: 40px;
+      opacity: 0.7;
+    }
+
+    .no-results {
+      text-align: center;
+      font-size: 1.1em;
+      padding: 40px;
+      opacity: 0.7;
+    }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8em;
+      font-weight: 800;
+      margin-left: 10px;
+    }
+
+    .status-title-i {
+      background: rgba(255, 165, 0, 0.3);
+      color: #ffcc66;
+      border: 1px solid rgba(255, 165, 0, 0.5);
+    }
+
+    .status-non-title-i {
+      background: rgba(0, 255, 0, 0.2);
+      color: #66ff66;
+      border: 1px solid rgba(0, 255, 0, 0.3);
+    }
+
+    .risk-score {
+      float: right;
+      font-weight: 800;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    .risk-high { background: rgba(255, 0, 0, 0.3); color: #ff6666; }
+    .risk-medium { background: rgba(255, 165, 0, 0.3); color: #ffaa66; }
+    .risk-low { background: rgba(0, 255, 0, 0.2); color: #66ff66; }
+
+    /* Footer matching your main site */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    /* Mobile responsive */
+    @media screen and (max-width: 768px) {
+      #desktop-nav {
+        display: none;
+      }
+      
+      .demo-hero h1 {
+        font-size: 2em;
+      }
+      
+      .search-box {
+        flex-direction: column;
+      }
+      
+      .demo-container {
+        padding: 20px 10px;
+      }
+      
+      .search-section,
+      .results-section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header matching your main site -->
+  <header>
+    <nav id="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about-founder">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="demo.html" style="color: #0066cc;">Demo</a>
+    </nav>
+  </header>
+
+  <div class="demo-container">
+    <!-- Demo Hero Section -->
+    <div class="demo-hero">
+      <h1>Texas Education Compliance Demo</h1>
+      <p>Search education compliance requirements for Texas school districts</p>
+      <p style="font-size: 0.9em; opacity: 0.7; margin-bottom: 0;">Currently showing data for 10 major Texas districts • More states coming soon</p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <h3 style="margin-bottom: 20px; font-weight: 800;">Search Compliance Data</h3>
+      
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by district name, compliance area, or requirement..." />
+        <button id="searchBtn" onclick="searchCompliance()">Search</button>
+      </div>
+
+      <div class="example-searches">
+        <h3>Try these example searches:</h3>
+        <span class="example-btn" onclick="runExampleSearch('Houston ISD')">Houston ISD</span>
+        <span class="example-btn" onclick="runExampleSearch('Title I')">Title I Requirements</span>
+        <span class="example-btn" onclick="runExampleSearch('Special Education')">Special Education</span>
+        <span class="example-btn" onclick="runExampleSearch('high risk')">High Risk Districts</span>
+        <span class="example-btn" onclick="runExampleSearch('assessment')">Assessment Requirements</span>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section">
+      <h3>Search Results</h3>
+      <div id="resultsContainer">
+        <div class="no-results">
+          Enter a search term above or click one of the example searches to get started.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fombra Insight. All rights reserved.</p>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="terms.html">Terms of Use</a>
+    </p>
+  </footer>
+
+  <script>
+    // Sample data matching your Airtable structure
+    const districts = [
+      {
+        district_name: "Houston ISD",
+        enrollment: 187000,
+        title_1_status: "Title I",
+        demographics: { low_income_percentage: 65, english_learners: 25, minority_percentage: 80 },
+        special_ed_percentage: 12.5,
+        assessment_scores: { staar_passing_rate: 65, meets_grade_level: 45 },
+        compliance_areas: ["Title I", "Special Education", "Assessment"],
+        compliance_risk_score: 8.2,
+        contact_email: "compliance@houstonisd.org"
+      },
+      {
+        district_name: "Dallas ISD",
+        enrollment: 145000,
+        title_1_status: "Title I", 
+        demographics: { low_income_percentage: 65, english_learners: 15, minority_percentage: 80 },
+        special_ed_percentage: 12.5,
+        assessment_scores: { staar_passing_rate: 65, meets_grade_level: 45 },
+        compliance_areas: ["Title I", "Special Education", "Assessment"],
+        compliance_risk_score: 7.9,
+        contact_email: "compliance@dallasisd.org"
+      },
+      {
+        district_name: "Cypress-Fairbanks ISD",
+        enrollment: 118000,
+        title_1_status: "Non-Title I",
+        demographics: { low_income_percentage: 35, english_learners: 15, minority_percentage: 45 },
+        special_ed_percentage: 12.5,
+        assessment_scores: { staar_passing_rate: 75, meets_grade_level: 58 },
+        compliance_areas: ["Special Education", "Assessment"],
+        compliance_risk_score: 4.1,
+        contact_email: "compliance@cfisd.net"
+      },
+      {
+        district_name: "Austin ISD",
+        enrollment: 75000,
+        title_1_status: "Non-Title I",
+        demographics: { low_income_percentage: 35, english_learners: 15, minority_percentage: 45 },
+        special_ed_percentage: 12.5,
+        assessment_scores: { staar_passing_rate: 72, meets_grade_level: 55 },
+        compliance_areas: ["Special Education", "Assessment"],
+        compliance_risk_score: 5.2,
+        contact_email: "compliance@austinisd.org"
+      },
+      {
+        district_name: "Katy ISD",
+        enrollment: 87000,
+        title_1_status: "Non-Title I",
+        demographics: { low_income_percentage: 25, english_learners: 12, minority_percentage: 40 },
+        special_ed_percentage: 11.8,
+        assessment_scores: { staar_passing_rate: 85, meets_grade_level: 70 },
+        compliance_areas: ["Special Education", "Assessment"],
+        compliance_risk_score: 2.8,
+        contact_email: "compliance@katyisd.org"
+      }
+    ];
+
+    const regulations = [
+      {
+        category: "Title I",
+        requirement: "Districts with >40% low-income students must develop comprehensive needs assessment",
+        applies_to: "High-poverty districts",
+        deadline: "Annually by August 1st",
+        penalty: "Loss of federal funding",
+        texas_code: "TAC Title 19, Chapter 102",
+        complexity_score: 7,
+        cost_impact: "High"
+      },
+      {
+        category: "Special Education",
+        requirement: "IEP meetings must include general education teacher",
+        applies_to: "All districts serving special education students",
+        deadline: "Within 30 days of referral",
+        penalty: "OCR compliance violation",
+        texas_code: "TAC Title 19, Chapter 89",
+        complexity_score: 5,
+        cost_impact: "Medium"
+      },
+      {
+        category: "Assessment",
+        requirement: "STAAR testing accommodations must be documented in IEP or 504 plan",
+        applies_to: "All districts",
+        deadline: "Before each testing window",
+        penalty: "Invalid test scores",
+        texas_code: "TAC Title 19, Chapter 101",
+        complexity_score: 6,
+        cost_impact: "Medium"
+      },
+      {
+        category: "Title I",
+        requirement: "Parent engagement policy must be developed with meaningful consultation",
+        applies_to: "Title I districts",
+        deadline: "Updated annually",
+        penalty: "Federal program review finding",
+        texas_code: "TAC Title 19, Chapter 102",
+        complexity_score: 4,
+        cost_impact: "Low"
+      },
+      {
+        category: "Special Education",
+        requirement: "Transition services must begin by age 16 in IEP",
+        applies_to: "All districts",
+        deadline: "By student's 16th birthday",
+        penalty: "Due process complaint risk",
+        texas_code: "TAC Title 19, Chapter 89",
+        complexity_score: 6,
+        cost_impact: "Medium"
+      }
+    ];
+
+    function searchCompliance() {
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!query) return;
+      
+      showLoading();
+      
+      // Simulate API delay
+      setTimeout(() => {
+        const results = performSearch(query);
+        displayResults(results, query);
+      }, 800);
+    }
+
+    function runExampleSearch(query) {
+      document.getElementById('searchInput').value = query;
+      searchCompliance();
+    }
+
+    function performSearch(query) {
+      let results = [];
+      
+      // Search districts
+      districts.forEach(district => {
+        let relevanceScore = 0;
+        let matchType = '';
+        
+        if (district.district_name.toLowerCase().includes(query)) {
+          relevanceScore += 10;
+          matchType = 'district';
+        }
+        
+        if (district.title_1_status.toLowerCase().includes(query)) {
+          relevanceScore += 8;
+          matchType = 'status';
+        }
+        
+        if (district.compliance_areas.some(area => area.toLowerCase().includes(query))) {
+          relevanceScore += 6;
+          matchType = 'compliance_area';
+        }
+        
+        if (query.includes('high risk') && district.compliance_risk_score >= 7) {
+          relevanceScore += 9;
+          matchType = 'risk';
+        }
+        
+        if (query.includes('low risk') && district.compliance_risk_score <= 4) {
+          relevanceScore += 9;
+          matchType = 'risk';
+        }
+        
+        if (relevanceScore > 0) {
+          results.push({
+            type: 'district',
+            data: district,
+            relevanceScore: relevanceScore,
+            matchType: matchType
+          });
+        }
+      });
+      
+      // Search regulations
+      regulations.forEach(regulation => {
+        let relevanceScore = 0;
+        let matchType = '';
+        
+        if (regulation.category.toLowerCase().includes(query)) {
+          relevanceScore += 8;
+          matchType = 'category';
+        }
+        
+        if (regulation.requirement.toLowerCase().includes(query)) {
+          relevanceScore += 7;
+          matchType = 'requirement';
+        }
+        
+        if (regulation.applies_to.toLowerCase().includes(query)) {
+          relevanceScore += 6;
+          matchType = 'applies_to';
+        }
+        
+        if (relevanceScore > 0) {
+          results.push({
+            type: 'regulation',
+            data: regulation,
+            relevanceScore: relevanceScore,
+            matchType: matchType
+          });
+        }
+      });
+      
+      // Sort by relevance score
+      return results.sort((a, b) => b.relevanceScore - a.relevanceScore);
+    }
+
+    function showLoading() {
+      document.getElementById('resultsContainer').innerHTML = '<div class="loading">Searching compliance data...</div>';
+    }
+
+    function displayResults(results, query) {
+      const container = document.getElementById('resultsContainer');
+      
+      if (results.length === 0) {
+        container.innerHTML = `<div class="no-results">No results found for "${query}". Try searching for a district name, compliance area, or requirement.</div>`;
+        return;
+      }
+      
+      let html = `<div style="margin-bottom: 20px; font-weight: 600;">Found ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"</div>`;
+      
+      results.forEach(result => {
+        if (result.type === 'district') {
+          html += formatDistrictResult(result.data);
+        } else if (result.type === 'regulation') {
+          html += formatRegulationResult(result.data);
+        }
+      });
+      
+      container.innerHTML = html;
+    }
+
+    function formatDistrictResult(district) {
+      const riskClass = district.compliance_risk_score >= 7 ? 'risk-high' : 
+                        district.compliance_risk_score >= 5 ? 'risk-medium' : 'risk-low';
+      
+      return `
+        <div class="result-item">
+          <h4>
+            ${district.district_name}
+            <span class="status-badge ${district.title_1_status === 'Title I' ? 'status-title-i' : 'status-non-title-i'}">
+              ${district.title_1_status}
+            </span>
+            <span class="risk-score ${riskClass}">Risk: ${district.compliance_risk_score}/10</span>
+          </h4>
+          <p><strong>Enrollment:</strong> ${district.enrollment.toLocaleString()} students</p>
+          <p><strong>Demographics:</strong> ${district.demographics.low_income_percentage}% low-income, ${district.demographics.minority_percentage}% minority</p>
+          <p><strong>Assessment Performance:</strong> ${district.assessment_scores.staar_passing_rate}% STAAR passing rate</p>
+          <p><strong>Compliance Areas:</strong> ${district.compliance_areas.join(', ')}</p>
+          <div class="result-meta">
+            <strong>Contact:</strong> ${district.contact_email}
+          </div>
+        </div>
+      `;
+    }
+
+    function formatRegulationResult(regulation) {
+      const costColor = regulation.cost_impact === 'High' ? '#ff6666' : 
+                        regulation.cost_impact === 'Medium' ? '#ffaa66' : '#66ff66';
+      
+      return `
+        <div class="result-item">
+          <h4>${regulation.category} Requirement</h4>
+          <p><strong>Requirement:</strong> ${regulation.requirement}</p>
+          <p><strong>Applies To:</strong> ${regulation.applies_to}</p>
+          <p><strong>Deadline:</strong> ${regulation.deadline}</p>
+          <p><strong>Penalty:</strong> ${regulation.penalty}</p>
+          <div class="result-meta">
+            <strong>Texas Code:</strong> ${regulation.texas_code} | 
+            <strong>Complexity:</strong> ${regulation.complexity_score}/10 | 
+            <span style="color: ${costColor}"><strong>Cost Impact:</strong> ${regulation.cost_impact}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Allow Enter key to trigger search
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        searchCompliance();
+      }
+    });
+  </script>
+</body>
+</html>
