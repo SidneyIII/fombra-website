@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,66 +13,16 @@
   
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
-/* Add this to your existing <style> section in the <head> */
-
-/* Hero Logo Overlay - Controls the background box behind your logo */
-.hero-logo-overlay {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh; /* Adjust this to make the overall hero section shorter/taller */
-  padding: 40px 20px;
-}
-
-.hero-logo-overlay::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%; /* Keeps full width as requested */
-  height: 60%; /* REDUCED from typical 70-80% to make box shorter */
-  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-logo-content {
-  position: relative;
-  z-index: 2; /* Ensures content appears above the background box */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
-}
-
-/* Ensure proper spacing and centering of hero elements */
-.hero-tagline {
-  margin: 20px 0 30px 0;
-  color: white;
-  font-size: 1.2em;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
+<!-- Add this CSS to your existing <style> section in the <head> -->
 <style>
- /* Hero Logo Styling - Normal size */
-.hero-logo-image {
-  width: 400px; /* Reduced back to normal size */
-  max-width: 70vw; /* Ensures it doesn't overflow on mobile devices */
-  height: auto; /* Maintains aspect ratio */
-  margin-bottom: 20px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
-}
+  /* Hero Logo Styling - 1.5x larger */
+  .hero-logo-image {
+    width: 600px; /* Increased from 400px to 600px (1.5x larger) */
+    max-width: 80vw; /* Ensures it doesn't overflow on mobile devices */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
+  }
 
   /* Mobile responsive adjustments for the logo */
   @media screen and (max-width: 768px) {
@@ -224,18 +175,10 @@
 
     /* Responsive Design for Mobile and Tablets */
     @media screen and (max-width: 768px) {
-  .hero-logo-image {
-    width: 300px; /* Reduced back from 450px */
-    max-width: 70vw;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-logo-image {
-    width: 250px; /* Reduced back from 375px */
-    max-width: 85vw;
-  }
-}
+      /* Hide desktop navigation on mobile */
+      #desktop-nav {
+        display: none !important;
+      }
       
       /* Show mobile navigation container */
       #mobile-nav-container {
@@ -850,3 +793,4 @@
   </script>
 </body>
 </html>
+
