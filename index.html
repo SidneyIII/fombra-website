@@ -64,14 +64,14 @@
   margin-top: 20px;
 }
 <style>
-  /* Hero Logo Styling - 1.5x larger */
-  .hero-logo-image {
-    width: 600px; /* Increased from 400px to 600px (1.5x larger) */
-    max-width: 80vw; /* Ensures it doesn't overflow on mobile devices */
-    height: auto; /* Maintains aspect ratio */
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
-  }
+ /* Hero Logo Styling - Normal size */
+.hero-logo-image {
+  width: 400px; /* Reduced back to normal size */
+  max-width: 70vw; /* Ensures it doesn't overflow on mobile devices */
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
+}
 
   /* Mobile responsive adjustments for the logo */
   @media screen and (max-width: 768px) {
@@ -224,10 +224,18 @@
 
     /* Responsive Design for Mobile and Tablets */
     @media screen and (max-width: 768px) {
-      /* Hide desktop navigation on mobile */
-      #desktop-nav {
-        display: none !important;
-      }
+  .hero-logo-image {
+    width: 300px; /* Reduced back from 450px */
+    max-width: 70vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-logo-image {
+    width: 250px; /* Reduced back from 375px */
+    max-width: 85vw;
+  }
+}
       
       /* Show mobile navigation container */
       #mobile-nav-container {
