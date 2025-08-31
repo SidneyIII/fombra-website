@@ -15,14 +15,29 @@
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
 <style>
-  /* Hero Logo Styling - 1.5x larger */
-  .hero-logo-image {
-    width: 600px; /* Increased from 400px to 600px (1.5x larger) */
-    max-width: 80vw; /* Ensures it doesn't overflow on mobile devices */
-    height: auto; /* Maintains aspect ratio */
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
-  }
+  /* Hero Logo Styling - Larger but properly fitted */
+.hero-logo-image {
+  width: 500px; /* Slightly smaller than 600px to fit better */
+  max-width: 75vw; /* Ensures it doesn't overflow on mobile devices */
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 15px; /* Reduced margin to save space */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
+}
+    /* Hero content spacing adjustments */
+.hero-logo-content {
+  padding: 20px; /* Add padding around all content */
+  max-width: 90%; /* Ensure content doesn't exceed container width */
+}
+
+.hero-tagline {
+  margin: 10px 0 15px 0; /* Reduced margins to save vertical space */
+  font-size: 1.1em; /* Slightly smaller to fit better */
+}
+
+.hero-buttons {
+  margin-top: 15px; /* Reduced top margin */
+  gap: 15px; /* Slightly smaller gap between buttons */
+}
 
   /* Mobile responsive adjustments for the logo */
   @media screen and (max-width: 768px) {
