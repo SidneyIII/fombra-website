@@ -4,13 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* Basic HTML and Body Setup */
 body, html {
   height: 100%;
   overflow-x: hidden;
 }
-
 /* Background Slideshow Container */
 #bg-slideshow {
   position: fixed;
@@ -21,7 +19,6 @@ body, html {
   z-index: -1;
   overflow: hidden;
 }
-
 .bg-layer {
   position: absolute;
   top: 0;
@@ -34,7 +31,6 @@ body, html {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
-
 /* Header Navigation */
 header {
   background: linear-gradient(to right, #222, #333);
@@ -47,14 +43,12 @@ header {
   top: 0;
   z-index: 100;
 }
-
 header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: black;
   text-shadow: 1px 1px 0 white, -1px -1px 0 white;
 }
-
 nav a {
   color: #fff;
   text-decoration: none;
@@ -63,27 +57,13 @@ nav a {
   font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; /* Montserrat as primary font */
   transition: color 0.3s;
 }
-
 nav a:hover {
   color: #1DB954;
 }
-
-/* MODIFIED Hero Section - Added compact background box */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 4rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* Hero Logo Overlay Section - REVERTED to original positioning, no background */
+/* Hero Logo Overlay Section */
 .hero-logo-overlay {
-  position: absolute;
-  top: 40px;
+  position: absolute; /* Changed from relative */
+  top: 40px; /* Moves the logo toward the top */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -91,36 +71,20 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  padding: 0;
+  padding: 0; /* Remove bottom spacing that pushes it down */
   pointer-events: none;
 }
-
 .hero-logo-content {
   text-align: center;
   color: white;
   pointer-events: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* Reduced gap for tighter layout */
 }
-
-/* ADD THESE NEW LINES HERE */
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 15px 60px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .hero-logo-image {
   max-width: 600px; /* Doubled from 300px */
   width: 80%;
   height: auto;
-  margin-bottom: 0; /* Removed margin, using gap instead */
+  margin-bottom: 0.5rem; /* Reduced to bring tagline closer */
 }
-
 .hero-tagline {
   font-size: 1.25rem;
   font-weight: 800; /* Extra bold weight */
@@ -128,17 +92,25 @@ nav a:hover {
   letter-spacing: 2px; /* Increased letter spacing for logo-like appearance */
   text-transform: uppercase; /* All capital letters */
   color: white;
-  margin: 0; /* Remove all margins */
+  margin-top: 0; /* Optional: ensure no extra space is added */
 }
-
-/* Hero Buttons Container - UPDATED */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* aligns content to the top */
+  align-items: center;
+  min-height: 100vh; /* full height of the screen */
+  padding-top: 4rem; /* adjust to move the logo higher/lower */
+  position: relative;
+  z-index: 1;
+}
+/* Hero Buttons Container */
 .hero-buttons {
-  margin-top: 0; /* Remove top margin, using gap instead */
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1.3rem; /* Slightly increased gap */
 }
-
 /* Base Style for Both Buttons - ENLARGED 1.3x */
 .hero-btn {
   padding: 0.98rem 1.95rem; /* 1.3x larger: 0.75*1.3=0.98, 1.5*1.3=1.95 */
@@ -152,14 +124,12 @@ nav a:hover {
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
-
 /* Hover Effect for Primary */
 .hero-btn:hover {
   background-color: #666;
   color: #fff;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
-
 /* Secondary Button Variant */
 .hero-btn.secondary {
   background-color: transparent;
@@ -167,61 +137,12 @@ nav a:hover {
   color: #ccc;
   border-radius: 10px; /* 1.3x larger: 8*1.3=10 */
 }
-
 /* Hover Effect for Secondary */
 .hero-btn.secondary:hover {
   background-color: #333;
   color: #fff;
   border-color: #999;
 }
-
-/* Mobile Responsive Adjustments for Hero */
-@media screen and (max-width: 768px) {
-  .hero-logo-overlay {
-    padding: 15px 30px; /* Smaller padding on mobile */
-    max-width: 95%;
-    top: 60px; /* Adjust position for mobile header */
-  }
-  
-  .hero-logo-content {
-    gap: 8px; /* Even tighter on mobile */
-  }
-  
-  .hero-logo-image {
-    max-width: 450px;
-    width: 90%;
-  }
-  
-  .hero-tagline {
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .hero-btn {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.6rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-logo-overlay {
-    padding: 12px 25px; /* Very compact on small screens */
-  }
-  
-  .hero-logo-image {
-    max-width: 350px;
-  }
-  
-  .hero-tagline {
-    font-size: 0.9rem;
-  }
-}
-
 /* Page Sections */
 section {
   padding: 4rem 2rem;
@@ -231,20 +152,17 @@ section {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
-
 section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #fff;
 }
-
 section p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #ddd;
 }
-
 /* Footer */
 footer {
   text-align: center;
@@ -252,3 +170,4 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
+
