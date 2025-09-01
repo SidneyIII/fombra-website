@@ -400,25 +400,33 @@
         
         const regulationsData = await regulationsResponse.json();
         
-        // Transform Airtable data to match your format
-        districts = districtsData.records.map(record => ({
-          district_name: record.fields.district_name || '',
-          enrollment: record.fields.enrollment || 0,
-          title_1_status: record.fields.title_1_status || '',
-          demographics: typeof record.fields.demographics === 'string' 
-            ? JSON.parse(record.fields.demographics) 
-            : record.fields.demographics || {},
-          special_ed_percentage: record.fields.special_ed_percentage || 0,
-          assessment_scores: typeof record.fields.assessment_scores === 'string' 
-            ? JSON.parse(record.fields.assessment_scores) 
-            : record.fields.assessment_scores || {},
-          compliance_areas: typeof record.fields.compliance_areas === 'string'
-            ? JSON.parse(record.fields.compliance_areas)
-            : record.fields.compliance_areas || [],
-          compliance_risk_score: record.fields['Compliance Risk Score'] || 0,
-          contact_email: record.fields['Contact Email'] || ''
-        }));
-        
+      // Replace the data transformation section in your demo.html with this:
+
+// Helper function to safely parse JSON
+function safeJSONParse(str, fallback = {}) {
+  if (typeof str !== 'string') return str || fallback;
+  try {
+    // Replace single quotes with double quotes for valid JSON
+    const cleanStr = str.replace(/'/g, '"');
+    return JSON.parse(cleanStr);
+  } catch (error) {
+    console.warn('JSON parse error:', error, 'for string:', str);
+    return fallback;
+  }
+}
+
+// Transform Airtable data to match your format
+districts = districtsData.records.map(record => ({
+  district_name: record.fields.district_name || '',
+  enrollment: record.fields.enrollment || 0,
+  title_1_status: record.fields.title_1_status || '',
+  demographics: safeJSONParse(record.fields.demographics, {}),
+  special_ed_percentage: record.fields.special_ed_percentage || 0,
+  assessment_scores: safeJSONParse(record.fields.assessment_scores, {}),
+  compliance_areas: safeJSONParse(record.fields.compliance_areas, []),
+  compliance_risk_score: record.fields['Compliance Risk Score'] || 0,
+  contact_email: record.fields['Contact Email'] || ''
+}));
         regulations = regulationsData.records.map(record => ({
           category: record.fields.category || '',
           requirement: record.fields.requirement || '',
