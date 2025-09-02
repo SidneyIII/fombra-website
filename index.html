@@ -12,44 +12,87 @@
   
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
-<!-- Add this CSS to your existing <style> section in the <head> -->
-<style>
   /* Hero Logo Styling - Larger but properly fitted */
 .hero-logo-image {
-  width: 500px; /* Slightly smaller than 600px to fit better */
-  max-width: 75vw; /* Ensures it doesn't overflow on mobile devices */
+  width: 650px; /* Increased from 500px */
+  max-width: 80vw; /* Slightly increased from 75vw */
   height: auto; /* Maintains aspect ratio */
-  margin-bottom: 15px; /* Reduced margin to save space */
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a nice shadow effect */
+  margin-bottom: 25px; /* Slightly increased margin */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Shadow effect */
 }
-    /* Hero content spacing adjustments */
+
+/* Hero content spacing adjustments */
 .hero-logo-content {
-  padding: 20px; /* Add padding around all content */
+  padding: 30px; /* Increased padding */
   max-width: 90%; /* Ensure content doesn't exceed container width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensure center alignment */
+  justify-content: center;
 }
 
 .hero-tagline {
-  margin: 10px 0 15px 0; /* Reduced margins to save vertical space */
-  font-size: 1.1em; /* Slightly smaller to fit better */
+  margin: 20px 0 30px 0; /* Increased margins for better spacing */
+  font-size: 1.4em; /* Increased from 1.1em */
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-transform: capitalize; /* Makes first letter of each word capital */
+  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
 }
 
 .hero-buttons {
-  margin-top: 15px; /* Reduced top margin */
-  gap: 15px; /* Slightly smaller gap between buttons */
+  margin-top: 25px; /* Increased top margin */
+  gap: 20px; /* Increased gap between buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Larger hero buttons */
+.hero-btn {
+  padding: 18px 40px !important; /* Increased from default padding */
+  font-size: 1.2em !important; /* Increased font size */
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05); /* Slight scale on hover */
 }
 
   /* Mobile responsive adjustments for the logo */
   @media screen and (max-width: 768px) {
     .hero-logo-image {
-      width: 450px; /* Increased from 300px to 450px (1.5x larger) */
-      max-width: 70vw;
+      width: 500px; /* Increased for tablet */
+      max-width: 75vw;
+    }
+    
+    .hero-tagline {
+      font-size: 1.2em; /* Slightly smaller on tablet */
+    }
+    
+    .hero-btn {
+      padding: 16px 35px !important;
+      font-size: 1.1em !important;
     }
   }
 
   @media screen and (max-width: 480px) {
     .hero-logo-image {
-      width: 375px; /* Increased from 250px to 375px (1.5x larger) */
+      width: 400px; /* Increased for mobile */
       max-width: 85vw;
+    }
+    
+    .hero-tagline {
+      font-size: 1.1em; /* Adjusted for mobile */
+    }
+    
+    .hero-btn {
+      padding: 14px 30px !important;
+      font-size: 1em !important;
     }
   }
 
@@ -474,7 +517,7 @@
     <div class="hero-logo-overlay">
       <div class="hero-logo-content">
         <img src="assets/images/logo1.png" alt="Fombra Insight Logo" class="hero-logo-image" />
-        <p class="hero-tagline">equity-driven educational technology consulting</p>
+        <p class="hero-tagline">Equity-Driven Educational Technology Consulting</p>
        <div class="hero-buttons">
     <a href="demo.html" class="hero-btn">Book Demo</a>
     <a href="terms.html" class="hero-btn secondary">Learn More</a>
@@ -500,99 +543,6 @@
     
     <!-- Left Box - Services Description -->
     <div class="animated-box delay-0" style="flex: 1; background-color: rgba(120, 120, 120, 0.6); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h2 style="font-size: 2em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Services</h2>
-      <p style="font-size: 1.1em; line-height: 1.6; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">
-        We provide tactical, context-sensitive consulting services to school districts, educational technology startups, and any businesses that seek to serve the greater good. With a foundation based on improving equity, we specialize in the application of social strategy behind your products and curriculum. It is our mission to ensure that all organizations are able to meet the diverse needs of students and clients within a world that is rapidly evolving. For many people, the simple expansion of opportunities by businesses and educational institutions can be life-changing.
-      </p>
-    </div>
-
-    <!-- Center Box - Package 1 -->
-    <div class="animated-box delay-1" style="flex: 1; background-color: rgba(80, 80, 80, 0.7); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Package 1</h3>
-      <ul style="list-style-type: none; padding-left: 0; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800;">
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Needs Assessment:</strong><br>
-          Client call focused on understanding organization, goals, audience, and pain points. <br>
-          <em style="color: #ccc;">You receive:</em> Summary of organizational points, and initial insights/suggestions.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Contextual Insight Briefing:</strong><br>
-          Contextual research is conducted regarding the following: what has worked for similar scenarios, identification of relevant gaps in access and inclusion, and case studies. <br>
-          <em style="color: #ccc;">You receive:</em> 3-5 page written Word/Doc sheet with extensive research regarding your organization's goals and respective pain points.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">AI/Tech Analysis:</strong><br>
-          Evaluation of your current or potential use of educational technology and AI tools. <br>
-          <em style="color: #ccc;">You receive:</em> Recommendations on tools that align with your mission, accessibility needs, and capacity, plus analysis of potential risks and benefits.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Stakeholder Interviews:</strong><br>
-          Fombra conducts a series of structured conversations with selected educators, leaders, or community members. <br>
-          <em style="color: #ccc;">You receive:</em> Summary of themes, values, and tensions that shape current practices or block innovation within the context of your goals.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Strategy Consultation:</strong><br>
-          Client call focused on identifying realistic, mission-aligned next steps. <br>
-          <em style="color: #ccc;">You receive:</em> Verbal and written guidance to help align goals with tools, timelines, and people — designed for sustainable implementation.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Blueprint Creation:</strong><br>
-          Customized 1–2 page roadmap tailored to your organization's needs. <br>
-          <em style="color: #ccc;">You receive:</em> A clear, actionable strategy organized into short-term and long-term steps, with notes on capacity, equity, and impact potential.
-        </li>
-
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-          <strong style="color: white;">Ongoing Application Analysis:</strong><br>
-          Continual review of how your chosen strategies and tools are working in practice. <br>
-          <em style="color: #ccc;">You receive:</em> Light check-ins and written insights on what's working, what's not, and suggested course corrections.
-        </li>
-      </ul>
-      <p style="font-style: italic; font-size: 1em; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center; margin-top: 20px;">Package Price: Varies depending on financial need.</p>
-    </div>
-
-    <!-- Right Box - Package 2 -->
-    <div class="animated-box delay-2" style="flex: 1; background-color: rgba(100, 100, 100, 0.6); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Package 2</h3>
-      <p style="font-size: 1.2em; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">TBD</p>
-    </div>
-
-  </div>
-</section>
-
-   <!-- Why Us Section - Updated with Dark Theme, Centered -->
-   <section id="why-us" class="scroll-section slide-left" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">Why Us?</h2>
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
-        Unlike other consulting services, we are here to ignite passion and strategy behind your work – we are not here to follow trends. With the current rise of artificial intelligence, startups everywhere are looking for opportunities to capitalize, while schools are struggling to adapt and keep pace. That's where we come in.
-      </p>
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
-        As mentioned in our services page, we specialize in identifying gaps that other people or AI systems may overlook — especially when it comes to inclusion, equity, and real-world implementation. Since the industries of education and technology are evolving so quickly, it can be difficult to keep up with advancements while maintaining a grounded perspective on how said advancements are actually supposed to benefit people.
-      </p>
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
-        Our insight will provide you with a well-rounded and hyper-aware strategy for improvement in this sector. Through each package, you will receive dedicated analyses of your product(s) and/or programming, contextual stakeholder input, and annual blueprints for expansion that prioritize both innovation and human-centered design.
-      </p>
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
-        Team members at Fombra Insight have experience within both low-income and underfunded public institutions, and private Ivy League institutions. This gives us a wide lens on the challenges and privileges that shape educational success.
-      </p>
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em;">
-        From his classes at Columbia University, founder Sidney Weaver III has extensive experience within political analysis, public speaking, scientific inquiry, and research design. He has also worked closely with various district superintendents, startup founders, teachers, and business executives to ensure that strategic insights are not only theoretically useful, but also practically useful across a variety of educational contexts.
-      </p>
-    </div>
-  </section>
-    
-   <!-- About The Founder Section - UPDATED with Two-Box Layout -->
-<section id="about-founder" class="scroll-section slide-right" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
-  
-  <div style="display: flex; width: 100vw; gap: 30px; padding: 40px 20px; box-sizing: border-box;">
-    
-    <!-- Left Box - Horizontal Rectangle for Text -->
-    <div class="animated-box delay-0" style="flex: 2.5; background-color: rgba(40, 40, 40, 0.5); padding: 35px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
       <h2 style="font-size: 2em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">About The Founder</h2>
       <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
         Sidney Weaver III is a current senior at Columbia University studying political science. He is originally from Council Bluffs, Iowa. He was raised by a single mother who had to overcome drug addictions, and they lived in poverty together. Looking forward, he decided to pursue a career pathway that would not only offer financial success, but one that would be emotionally enriching by helping solve the world's greatest problems and improving opportunities for all.
@@ -806,4 +756,97 @@
     });
   </script>
 </body>
-</html>
+</html>rat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Services</h2>
+      <p style="font-size: 1.1em; line-height: 1.6; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">
+        We provide tactical, context-sensitive consulting services to school districts, educational technology startups, and any businesses that seek to serve the greater good. With a foundation based on improving equity, we specialize in the application of social strategy behind your products and curriculum. It is our mission to ensure that all organizations are able to meet the diverse needs of students and clients within a world that is rapidly evolving. For many people, the simple expansion of opportunities by businesses and educational institutions can be life-changing.
+      </p>
+    </div>
+
+    <!-- Center Box - Package 1 -->
+    <div class="animated-box delay-1" style="flex: 1; background-color: rgba(80, 80, 80, 0.7); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Package 1</h3>
+      <ul style="list-style-type: none; padding-left: 0; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800;">
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Needs Assessment:</strong><br>
+          Client call focused on understanding organization, goals, audience, and pain points. <br>
+          <em style="color: #ccc;">You receive:</em> Summary of organizational points, and initial insights/suggestions.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Contextual Insight Briefing:</strong><br>
+          Contextual research is conducted regarding the following: what has worked for similar scenarios, identification of relevant gaps in access and inclusion, and case studies. <br>
+          <em style="color: #ccc;">You receive:</em> 3-5 page written Word/Doc sheet with extensive research regarding your organization's goals and respective pain points.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">AI/Tech Analysis:</strong><br>
+          Evaluation of your current or potential use of educational technology and AI tools. <br>
+          <em style="color: #ccc;">You receive:</em> Recommendations on tools that align with your mission, accessibility needs, and capacity, plus analysis of potential risks and benefits.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Stakeholder Interviews:</strong><br>
+          Fombra conducts a series of structured conversations with selected educators, leaders, or community members. <br>
+          <em style="color: #ccc;">You receive:</em> Summary of themes, values, and tensions that shape current practices or block innovation within the context of your goals.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Strategy Consultation:</strong><br>
+          Client call focused on identifying realistic, mission-aligned next steps. <br>
+          <em style="color: #ccc;">You receive:</em> Verbal and written guidance to help align goals with tools, timelines, and people — designed for sustainable implementation.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Blueprint Creation:</strong><br>
+          Customized 1–2 page roadmap tailored to your organization's needs. <br>
+          <em style="color: #ccc;">You receive:</em> A clear, actionable strategy organized into short-term and long-term steps, with notes on capacity, equity, and impact potential.
+        </li>
+
+        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
+          <strong style="color: white;">Ongoing Application Analysis:</strong><br>
+          Continual review of how your chosen strategies and tools are working in practice. <br>
+          <em style="color: #ccc;">You receive:</em> Light check-ins and written insights on what's working, what's not, and suggested course corrections.
+        </li>
+      </ul>
+      <p style="font-style: italic; font-size: 1em; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center; margin-top: 20px;">Package Price: Varies depending on financial need.</p>
+    </div>
+
+    <!-- Right Box - Package 2 -->
+    <div class="animated-box delay-2" style="flex: 1; background-color: rgba(100, 100, 100, 0.6); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Package 2</h3>
+      <p style="font-size: 1.2em; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">TBD</p>
+    </div>
+
+  </div>
+</section>
+
+   <!-- Why Us Section - Updated with Dark Theme, Centered -->
+   <section id="why-us" class="scroll-section slide-left" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">Why Us?</h2>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Unlike other consulting services, we are here to ignite passion and strategy behind your work – we are not here to follow trends. With the current rise of artificial intelligence, startups everywhere are looking for opportunities to capitalize, while schools are struggling to adapt and keep pace. That's where we come in.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        As mentioned in our services page, we specialize in identifying gaps that other people or AI systems may overlook — especially when it comes to inclusion, equity, and real-world implementation. Since the industries of education and technology are evolving so quickly, it can be difficult to keep up with advancements while maintaining a grounded perspective on how said advancements are actually supposed to benefit people.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Our insight will provide you with a well-rounded and hyper-aware strategy for improvement in this sector. Through each package, you will receive dedicated analyses of your product(s) and/or programming, contextual stakeholder input, and annual blueprints for expansion that prioritize both innovation and human-centered design.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Team members at Fombra Insight have experience within both low-income and underfunded public institutions, and private Ivy League institutions. This gives us a wide lens on the challenges and privileges that shape educational success.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em;">
+        From his classes at Columbia University, founder Sidney Weaver III has extensive experience within political analysis, public speaking, scientific inquiry, and research design. He has also worked closely with various district superintendents, startup founders, teachers, and business executives to ensure that strategic insights are not only theoretically useful, but also practically useful across a variety of educational contexts.
+      </p>
+    </div>
+  </section>
+    
+   <!-- About The Founder Section - UPDATED with Two-Box Layout -->
+<section id="about-founder" class="scroll-section slide-right" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
+  
+  <div style="display: flex; width: 100vw; gap: 30px; padding: 40px 20px; box-sizing: border-box;">
+    
+    <!-- Left Box - Horizontal Rectangle for Text -->
+    <div class="animated-box delay-0" style="flex: 2.5; background-color: rgba(40, 40, 40, 0.5); padding: 35px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <h2 style="font-size: 2em; margin-bottom: 20px; font-family: 'Montser
