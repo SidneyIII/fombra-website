@@ -14,49 +14,31 @@
  
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
- /* Hero section - reduced height */
-.hero {
-  opacity: 0;
-  animation: heroFadeIn 1.2s ease-out 0.3s forwards;
-  min-height: 70vh; /* Reduced from default to fit content better */
-  max-height: 80vh; /* Prevents overflow */
-}
-
-/* Hero overlay - reduced height */
-.hero-logo-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  padding: 40px 20px; /* Reduced from larger padding */
-  max-width: 90%;
-  margin: 0 auto;
-  min-height: 60vh; /* Reduced height */
-  max-height: 70vh; /* Constrain maximum height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-    
 <!-- Add this CSS to your existing <style> section in the <head> -->
-/* Hero Logo Styling - further reduced bottom margin */
-.hero-logo-image {
-  width: 850px;
-  max-width: 94vw;
-  height: auto;
-  margin-bottom: -10px; /* More negative margin to reduce gap */
-  margin-top: -80px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-}
-
-/* Hero content container - optimized for smaller overlay */
+/* Hero content container - properly centered and sized */
 .hero-logo-content {
-  padding: 20px;
-  max-width: 98%;
-  transform: translateY(-40px); /* Less aggressive positioning */
+  padding: 30px 20px; /* Increased padding for better containment */
+  max-width: 90%;
+  transform: translateY(-20px); /* Less aggressive positioning */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45); /* Add background to existing container */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  min-height: 60vh; /* Constrain height */
+  max-height: 70vh;
+}
+
+/* Hero Logo Styling - recentered */
+.hero-logo-image {
+  width: 750px; /* Slightly reduced to fit better */
+  max-width: 88vw;
+  height: auto;
+  margin-bottom: -8px;
+  margin-top: -20px; /* Less aggressive top margin */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
 /* Hero tagline (motto) styling - half the current margin */
