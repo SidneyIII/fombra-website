@@ -15,33 +15,38 @@
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
 <style>
-* Hero Logo Styling - Larger and positioned higher */
+/* Hero Logo Styling - Larger and positioned higher */
 .hero-logo-image {
-  width: 600px; /* Increased from 550px */
-  max-width: 85vw; /* Slightly increased for better scaling */
+  width: 650px; /* Increased from 600px */
+  max-width: 88vw;
   height: auto;
   margin-bottom: 8px;
-  margin-top: -40px; /* Moves logo significantly higher in the section */
+  margin-top: -60px; /* Moved higher from -40px */
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* Hero content container - positioned higher */
+/* Hero content container - positioned higher and re-centered */
 .hero-logo-content {
-  padding: 10px 20px; /* Reduced top padding to move everything up */
+  padding: 5px 20px; /* Reduced from 10px to move higher */
   max-width: 90%;
-  transform: translateY(-30px); /* Moves entire content block higher */
+  transform: translateY(-50px); /* Moved higher from -30px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hero tagline (motto) styling */
+/* Hero tagline (motto) styling - keep same size */
 .hero-tagline {
   margin: 5px 0 10px 0;
   font-size: 1.25em;
   font-weight: 800;
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  text-align: center;
 }
 
-/* Hero buttons styling */
+/* Hero buttons styling - keep same size */
 .hero-buttons {
   margin-top: 12px;
   gap: 20px;
@@ -60,18 +65,17 @@
   min-width: 180px;
   text-align: center;
 }
-
  /* Mobile responsive adjustments */
 @media screen and (max-width: 768px) {
   .hero-logo-image {
-    width: 520px; /* Increased from 480px */
-    max-width: 80vw;
+    width: 560px; /* Increased from 520px */
+    max-width: 82vw;
     margin-bottom: 6px;
-    margin-top: -30px; /* Less aggressive move on mobile */
+    margin-top: -45px; /* Moved higher from -30px */
   }
   
   .hero-logo-content {
-    transform: translateY(-20px); /* Less movement on mobile */
+    transform: translateY(-35px); /* Moved higher from -20px */
   }
   
   .hero-tagline {
@@ -91,14 +95,14 @@
 
 @media screen and (max-width: 480px) {
   .hero-logo-image {
-    width: 440px; /* Increased from 400px */
-    max-width: 95vw;
+    width: 480px; /* Increased from 440px */
+    max-width: 98vw;
     margin-bottom: 5px;
-    margin-top: -20px; /* Minimal movement on small screens */
+    margin-top: -35px; /* Moved higher from -20px */
   }
   
   .hero-logo-content {
-    transform: translateY(-15px);
+    transform: translateY(-25px); /* Moved higher from -15px */
   }
   
   .hero-tagline {
