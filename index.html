@@ -14,31 +14,30 @@
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
-<style>
-/* Hero Logo Styling - Moved higher with reduced bottom margin */
+/* Hero Logo Styling - Reduced bottom margin */
 .hero-logo-image {
   width: 850px;
   max-width: 94vw;
   height: auto;
-  margin-bottom: 1px; /* Reduced from 4px to close gap with motto */
-  margin-top: -80px; /* Moved higher from -60px */
+  margin-bottom: -5px; /* Negative margin to bring motto closer */
+  margin-top: -80px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* Hero content container - moved higher */
+/* Hero content container - fine-tuned positioning */
 .hero-logo-content {
   padding: 5px 20px;
   max-width: 98%;
-  transform: translateY(-70px); /* Moved higher from -50px */
+  transform: translateY(-65px); /* Slightly less aggressive from -70px */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Hero tagline (motto) styling - reduced top margin */
+/* Hero tagline (motto) styling - minimal margin */
 .hero-tagline {
-  margin: 0px 0 6px 0; /* Reduced top margin from 2px to 0px */
+  margin: -3px 0 4px 0; /* Negative top margin to overlap slightly */
   font-size: 1.4em;
   font-weight: 800;
   color: white;
@@ -46,9 +45,9 @@
   text-align: center;
 }
 
-/* Hero buttons styling - keep same positioning */
+/* Hero buttons styling - reduced top margin */
 .hero-buttons {
-  margin-top: 8px;
+  margin-top: 5px; /* Reduced from 8px */
   gap: 22px;
   display: flex;
   justify-content: center;
@@ -56,31 +55,37 @@
 }
 @media screen and (max-width: 768px) {
   .hero-logo-image {
-    margin-bottom: 1px; /* Reduced spacing */
-    margin-top: -60px; /* Moved higher from -45px */
+    margin-bottom: -3px; /* Proportional negative margin */
   }
   
   .hero-logo-content {
-    transform: translateY(-50px); /* Moved higher from -35px */
+    transform: translateY(-45px); /* Adjusted for mobile */
   }
   
   .hero-tagline {
-    margin: 0px 0 5px 0; /* Reduced top margin */
+    margin: -2px 0 3px 0;
+  }
+  
+  .hero-buttons {
+    margin-top: 4px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-logo-image {
-    margin-bottom: 0px; /* Minimal spacing on small screens */
-    margin-top: -50px; /* Moved higher from -35px */
+    margin-bottom: -2px;
   }
   
   .hero-logo-content {
-    transform: translateY(-35px); /* Moved higher from -25px */
+    transform: translateY(-30px);
   }
   
   .hero-tagline {
-    margin: 0px 0 4px 0;
+    margin: -1px 0 3px 0;
+  }
+  
+  .hero-buttons {
+    margin-top: 3px;
   }
 }
     /* Header Navigation - Semi-transparent blur with rectangle shape */
