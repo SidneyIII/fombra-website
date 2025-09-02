@@ -15,27 +15,35 @@
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
 <style>
-/* Hero Logo Styling - Larger but properly fitted */
+/* Hero Logo Styling - Larger and positioned higher */
 .hero-logo-image {
-  width: 550px;
-  max-width: 80vw;
+  width: 600px; /* Increased from 550px */
+  max-width: 85vw; /* Slightly increased for better scaling */
   height: auto;
-  margin-bottom: 8px; /* Reduced from 18px to bring elements closer */
+  margin-bottom: 8px;
+  margin-top: -40px; /* Moves logo significantly higher in the section */
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* Hero tagline (motto) styling - moved closer to logo */
+/* Hero content container - positioned higher */
+.hero-logo-content {
+  padding: 10px 20px; /* Reduced top padding to move everything up */
+  max-width: 90%;
+  transform: translateY(-30px); /* Moves entire content block higher */
+}
+
+/* Hero tagline (motto) styling */
 .hero-tagline {
-  margin: 5px 0 10px 0; /* Reduced from 12px 0 18px 0 */
+  margin: 5px 0 10px 0;
   font-size: 1.25em;
   font-weight: 800;
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
-/* Hero buttons styling - larger and closer to motto */
+/* Hero buttons styling */
 .hero-buttons {
-  margin-top: 12px; /* Reduced from 20px */
+  margin-top: 12px;
   gap: 20px;
   display: flex;
   justify-content: center;
@@ -43,27 +51,32 @@
 }
 
 .hero-btn {
-  padding: 18px 38px; /* Increased significantly from 14px 28px (about 35% larger) */
-  font-size: 1.35em; /* Increased from 1.1em (about 23% larger) */
+  padding: 18px 38px;
+  font-size: 1.35em;
   font-weight: 800;
-  border-radius: 10px; /* Slightly larger border radius to match new size */
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 180px; /* Increased from 140px */
+  min-width: 180px;
   text-align: center;
 }
 
  /* Mobile responsive adjustments */
 @media screen and (max-width: 768px) {
   .hero-logo-image {
-    width: 480px;
-    max-width: 75vw;
-    margin-bottom: 6px; /* Reduced spacing on mobile too */
+    width: 520px; /* Increased from 480px */
+    max-width: 80vw;
+    margin-bottom: 6px;
+    margin-top: -30px; /* Less aggressive move on mobile */
+  }
+  
+  .hero-logo-content {
+    transform: translateY(-20px); /* Less movement on mobile */
   }
   
   .hero-tagline {
     font-size: 1.15em;
-    margin: 4px 0 8px 0; /* Tighter spacing on mobile */
+    margin: 4px 0 8px 0;
   }
   
   .hero-buttons {
@@ -71,16 +84,21 @@
   }
   
   .hero-btn {
-    padding: 16px 32px; /* Proportionally larger for mobile */
+    padding: 16px 32px;
     font-size: 1.2em;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-logo-image {
-    width: 400px;
-    max-width: 90vw;
+    width: 440px; /* Increased from 400px */
+    max-width: 95vw;
     margin-bottom: 5px;
+    margin-top: -20px; /* Minimal movement on small screens */
+  }
+  
+  .hero-logo-content {
+    transform: translateY(-15px);
   }
   
   .hero-tagline {
@@ -90,7 +108,7 @@
   
   .hero-buttons {
     margin-top: 8px;
-    flex-direction: column; /* Stack buttons vertically on small screens */
+    flex-direction: column;
     gap: 12px;
   }
   
