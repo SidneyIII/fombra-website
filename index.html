@@ -10,34 +10,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-  
+
+  /* Hero section - reduced height */
+.hero {
+  opacity: 0;
+  animation: heroFadeIn 1.2s ease-out 0.3s forwards;
+  min-height: 70vh; /* Reduced from default to fit content better */
+  max-height: 80vh; /* Prevents overflow */
+}
+
+/* Hero overlay - reduced height */
+.hero-logo-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 40px 20px; /* Reduced from larger padding */
+  max-width: 90%;
+  margin: 0 auto;
+  min-height: 60vh; /* Reduced height */
+  max-height: 70vh; /* Constrain maximum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
   <!-- Scroll Animation Styles + Responsive Design -->
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
-/* Hero Logo Styling - Reduced bottom margin */
+/* Hero Logo Styling - further reduced bottom margin */
 .hero-logo-image {
   width: 850px;
   max-width: 94vw;
   height: auto;
-  margin-bottom: -5px; /* Negative margin to bring motto closer */
+  margin-bottom: -10px; /* More negative margin to reduce gap */
   margin-top: -80px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* Hero content container - fine-tuned positioning */
+/* Hero content container - optimized for smaller overlay */
 .hero-logo-content {
-  padding: 5px 20px;
+  padding: 20px;
   max-width: 98%;
-  transform: translateY(-65px); /* Slightly less aggressive from -70px */
+  transform: translateY(-40px); /* Less aggressive positioning */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Hero tagline (motto) styling - minimal margin */
+/* Hero tagline (motto) styling - half the current margin */
 .hero-tagline {
-  margin: -3px 0 4px 0; /* Negative top margin to overlap slightly */
+  margin: -8px 0 2px 0; /* More negative top margin, minimal bottom */
   font-size: 1.4em;
   font-weight: 800;
   color: white;
@@ -45,47 +67,43 @@
   text-align: center;
 }
 
-/* Hero buttons styling - reduced top margin */
+/* Hero buttons styling - minimal top margin */
 .hero-buttons {
-  margin-top: 5px; /* Reduced from 8px */
+  margin-top: 2px; /* Minimal spacing */
   gap: 22px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 768px) {
-  .hero-logo-image {
-    margin-bottom: -3px; /* Proportional negative margin */
+  .hero-logo-overlay {
+    min-height: 50vh;
+    max-height: 60vh;
+    padding: 30px 15px;
   }
   
-  .hero-logo-content {
-    transform: translateY(-45px); /* Adjusted for mobile */
+  .hero-logo-image {
+    margin-bottom: -8px;
   }
   
   .hero-tagline {
-    margin: -2px 0 3px 0;
-  }
-  
-  .hero-buttons {
-    margin-top: 4px;
+    margin: -6px 0 2px 0;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .hero-logo-image {
-    margin-bottom: -2px;
+  .hero-logo-overlay {
+    min-height: 45vh;
+    max-height: 55vh;
+    padding: 25px 10px;
   }
   
-  .hero-logo-content {
-    transform: translateY(-30px);
+  .hero-logo-image {
+    margin-bottom: -6px;
   }
   
   .hero-tagline {
-    margin: -1px 0 3px 0;
-  }
-  
-  .hero-buttons {
-    margin-top: 3px;
+    margin: -4px 0 1px 0;
   }
 }
     /* Header Navigation - Semi-transparent blur with rectangle shape */
