@@ -15,86 +15,72 @@
   <style>
 <!-- Add this CSS to your existing <style> section in the <head> -->
 <style>
-/* Hero Logo Styling - Larger and optimized for overlay */
+/* Hero Logo Styling - Moved higher with reduced bottom margin */
 .hero-logo-image {
-  width: 850px; /* Increased from 800px */
+  width: 850px;
   max-width: 94vw;
   height: auto;
-  margin-bottom: 4px; /* Reduced from 8px to bring motto closer */
-  margin-top: -60px;
+  margin-bottom: 1px; /* Reduced from 4px to close gap with motto */
+  margin-top: -80px; /* Moved higher from -60px */
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* Hero tagline (motto) styling - larger and closer */
+/* Hero content container - moved higher */
+.hero-logo-content {
+  padding: 5px 20px;
+  max-width: 98%;
+  transform: translateY(-70px); /* Moved higher from -50px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero tagline (motto) styling - reduced top margin */
 .hero-tagline {
-  margin: 2px 0 6px 0; /* Reduced from 5px 0 10px 0 */
-  font-size: 1.4em; /* Increased from 1.25em */
+  margin: 0px 0 6px 0; /* Reduced top margin from 2px to 0px */
+  font-size: 1.4em;
   font-weight: 800;
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
   text-align: center;
 }
 
-/* Hero buttons styling - larger and closer */
+/* Hero buttons styling - keep same positioning */
 .hero-buttons {
-  margin-top: 8px; /* Reduced from 12px */
+  margin-top: 8px;
   gap: 22px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-
-.hero-btn {
-  padding: 20px 42px; /* Increased from 18px 38px */
-  font-size: 1.45em; /* Increased from 1.35em */
-  font-weight: 800;
-  border-radius: 12px; /* Increased from 10px */
-  text-decoration: none;
-  transition: all 0.3s ease;
-  min-width: 190px; /* Increased from 180px */
-  text-align: center;
-}
 @media screen and (max-width: 768px) {
   .hero-logo-image {
-    width: 720px; /* Increased from 680px */
-    max-width: 90vw;
-    margin-bottom: 3px; /* Reduced spacing */
+    margin-bottom: 1px; /* Reduced spacing */
+    margin-top: -60px; /* Moved higher from -45px */
+  }
+  
+  .hero-logo-content {
+    transform: translateY(-50px); /* Moved higher from -35px */
   }
   
   .hero-tagline {
-    font-size: 1.25em; /* Increased from 1.15em */
-    margin: 2px 0 5px 0; /* Tighter spacing */
-  }
-  
-  .hero-buttons {
-    margin-top: 6px; /* Reduced from 10px */
-  }
-  
-  .hero-btn {
-    padding: 18px 36px; /* Increased from 16px 32px */
-    font-size: 1.3em; /* Increased from 1.2em */
+    margin: 0px 0 5px 0; /* Reduced top margin */
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-logo-image {
-    width: 620px; /* Increased from 580px */
-    margin-bottom: 2px;
+    margin-bottom: 0px; /* Minimal spacing on small screens */
+    margin-top: -50px; /* Moved higher from -35px */
+  }
+  
+  .hero-logo-content {
+    transform: translateY(-35px); /* Moved higher from -25px */
   }
   
   .hero-tagline {
-    font-size: 1.15em; /* Increased from 1.05em */
-    margin: 1px 0 4px 0;
-  }
-  
-  .hero-buttons {
-    margin-top: 5px;
-  }
-  
-  .hero-btn {
-    padding: 16px 32px; /* Increased from 14px 28px */
-    font-size: 1.2em; /* Increased from 1.1em */
-    min-width: 170px;
+    margin: 0px 0 4px 0;
   }
 }
     /* Header Navigation - Semi-transparent blur with rectangle shape */
