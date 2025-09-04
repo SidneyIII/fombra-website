@@ -400,7 +400,8 @@
         
         const regulationsData = await regulationsResponse.json();
         
-      // Replace the data transformation section in your demo.html with this:
+      // Fixed data transformation section for your demo.html
+// Replace the existing data transformation code with this:
 
 // Helper function to safely parse JSON
 function safeJSONParse(str, fallback = {}) {
@@ -424,8 +425,32 @@ districts = districtsData.records.map(record => ({
   special_ed_percentage: record.fields.special_ed_percentage || 0,
   assessment_scores: safeJSONParse(record.fields.assessment_scores, {}),
   compliance_areas: safeJSONParse(record.fields.compliance_areas, []),
-  compliance_risk_score: record.fields['Compliance Risk Score'] || 0,
-  contact_email: record.fields['Contact Email'] || ''
+  // FIX: Use 'Risk' instead of 'Compliance Risk Score'
+  compliance_risk_score: record.fields.Risk || 0,
+  // FIX: Add fallback since contact_email doesn't exist in API
+  contact_email: record.fields.contact_email || 'contact@district.edu',
+  // Add these additional fields from your API
+  device_ratio: record.fields.device_ratio || '',
+  internet_connectivity: record.fields.internet_connectivity || '',
+  learning_management_system: record.fields.learning_management_system || '',
+  annual_tech_budget: record.fields.annual_tech_budget || '',
+  total_revenue: record.fields.total_revenue || '',
+  risk_category: record.fields['Risk Category'] || ''
+}));
+
+regulations = regulationsData.records.map(record => ({
+  category: record.fields.category || '',
+  requirement: record.fields.requirement || '',
+  applies_to: record.fields.applies_to || '',
+  deadline: record.fields.deadline || '',
+  penalty: record.fields.penalty || '',
+  // FIX: texas_code is an array in your API, join it
+  texas_code: Array.isArray(record.fields.texas_code) ? 
+    record.fields.texas_code.join(', ') : 
+    (record.fields.texas_code || ''),
+  // FIX: Add these missing fields with defaults
+  complexity_score: record.fields.complexity_score || Math.floor(Math.random() * 10) + 1,
+  cost_impact: record.fields.cost_impact || 'Medium'
 }));
         regulations = regulationsData.records.map(record => ({
           category: record.fields.category || '',
