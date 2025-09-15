@@ -454,122 +454,9 @@
         gap: 25px !important;
       }
     }
-
-    /* Enhanced Why Us Section - Glowing Effects */
-.glow-box {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.glow-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
-}
-
-.highlight-box {
-  position: relative;
-  overflow: hidden;
-}
-
-.highlight-box::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-  border-radius: 22px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.highlight-box:hover::before {
-  opacity: 1;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
-}
-
-.glow-icon {
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  transition: all 0.3s ease;
-}
-
-.glow-icon:hover {
-  box-shadow: 0 0 30px rgba(255,255,255,0.5);
-  transform: scale(1.1);
-}
-
-.differentiation-grid {
-  animation: gridFadeIn 1.2s ease-out;
-}
-
-@keyframes gridFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Enhanced animation delays for Why Us section */
-.delay-0 { transition-delay: 0s; }
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; }
-.delay-5 { transition-delay: 1.0s; }
-.delay-6 { transition-delay: 1.2s; }
-.delay-7 { transition-delay: 1.4s; }
-
-/* Updated mobile responsiveness for 3-column layout */
-@media screen and (max-width: 1024px) {
-  .differentiation-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .differentiation-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 0 10px !important;
-  }
-  
-  .highlight-box {
-    padding: 25px 20px !important;
-    min-height: auto !important;
-  }
-  
-  .glow-icon {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.3em !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .highlight-box {
-    padding: 20px 15px !important;
-  }
-  
-  .highlight-box h3 {
-    font-size: 1.1em !important;
-  }
-  
-  .highlight-box p {
-    font-size: 0.9em !important;
-  }
-}
-    
+  </style>
+</head>
+<body>
   <!-- Background Slideshow -->
   <div id="bg-slideshow">
     <div class="bg-layer" id="bg1"></div>
@@ -667,109 +554,26 @@
 </section>
 
    <!-- Why Us Section - Updated with Dark Theme, Centered -->
-   <!-- Enhanced Why Us Section with Glowing Effects -->
-<section id="why-us" class="scroll-section slide-left" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
-  
-  <!-- Section Header -->
-  <div style="text-align: center; padding: 40px 20px 20px 20px;">
-    <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2.5em; margin: 0 0 15px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); line-height: 1.2;">
-      Why Choose Fombra Insight?
-    </h2>
-    <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); line-height: 1.4;">
-      We're education specialists building the intelligence layer that transforms how learning happens
-    </p>
-  </div>
-
-  <!-- Content Container -->
-  <div style="width: 100vw; padding: 40px 20px; box-sizing: border-box;">
-    
-    <!-- Main Description Box -->
-    <div class="animated-box glow-box delay-0" style="background-color: rgba(0, 0, 0, 0.4); padding: 35px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto;">
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; text-align: center; margin: 0;">
-        Fombra Insight is purpose-built for the entire education ecosystem. We understand that compliance, student outcomes, product effectiveness, and operational efficiency are all interconnected pieces of the learning puzzle. We're the only platform that combines deep educational domain expertise with cutting-edge AI and machine learning, specifically designed to optimize learning outcomes across districts and EdTech products.
+   <section id="why-us" class="scroll-section slide-left" style="padding: 60px 20px; background-color: rgba(0, 0, 0, 0.6); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 1200px; margin: 40px auto;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2em; margin-bottom: 20px; text-align: center;">Why Us?</h2>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Unlike other consulting services, we are here to ignite passion and strategy behind your work – we are not here to follow trends. With the current rise of artificial intelligence, startups everywhere are looking for opportunities to capitalize, while schools are struggling to adapt and keep pace. That's where we come in.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        As mentioned in our services page, we specialize in identifying gaps that other people or AI systems may overlook — especially when it comes to inclusion, equity, and real-world implementation. Since the industries of education and technology are evolving so quickly, it can be difficult to keep up with advancements while maintaining a grounded perspective on how said advancements are actually supposed to benefit people.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Our insight will provide you with a well-rounded and hyper-aware strategy for improvement in this sector. Through each package, you will receive dedicated analyses of your product(s) and/or programming, contextual stakeholder input, and annual blueprints for expansion that prioritize both innovation and human-centered design.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px;">
+        Team members at Fombra Insight have experience within both low-income and underfunded public institutions, and private Ivy League institutions. This gives us a wide lens on the challenges and privileges that shape educational success.
+      </p>
+      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em;">
+        From his classes at Columbia University, founder Sidney Weaver III has extensive experience within political analysis, public speaking, scientific inquiry, and research design. He has also worked closely with various district superintendents, startup founders, teachers, and business executives to ensure that strategic insights are not only theoretically useful, but also practically useful across a variety of educational contexts.
       </p>
     </div>
-
-    <!-- Differentiation Points Grid -->
-    <div class="differentiation-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1400px; margin: 0 auto;">
-      
-      <!-- Point 1 -->
-      <div class="animated-box glow-box highlight-box delay-1" style="background: linear-gradient(135deg, rgba(74, 144, 226, 0.3), rgba(80, 200, 120, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(74, 144, 226, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #4A90E2, #50C878); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          🎯
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Education-First Approach</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          We help districts leverage data to improve learning outcomes while helping EdTech founders build products that demonstrably enhance student success.
-        </p>
-      </div>
-
-      <!-- Point 2 -->
-      <div class="animated-box glow-box highlight-box delay-2" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(255, 20, 147, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(138, 43, 226, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #8A2BE2, #FF1493); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          🧠
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Holistic Learning Intelligence</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          We connect compliance patterns to achievement outcomes, product usage to learning gains, operational efficiency to educational equity.
-        </p>
-      </div>
-
-      <!-- Point 3 -->
-      <div class="animated-box glow-box highlight-box delay-3" style="background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 69, 0, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(255, 140, 0, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF8C00, #FF4500); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          👥
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Built for Education Professionals</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          Our tools serve superintendents, principals, district leaders, and EdTech founders who need actionable insights to optimize learning environments.
-        </p>
-      </div>
-
-      <!-- Point 4 -->
-      <div class="animated-box glow-box highlight-box delay-4" style="background: linear-gradient(135deg, rgba(50, 205, 50, 0.3), rgba(34, 139, 34, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(50, 205, 50, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #32CD32, #228B22); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          🔮
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Predictive & Prescriptive</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          We don't just analyze what happened - we predict learning opportunities and prescribe interventions that maximize educational impact.
-        </p>
-      </div>
-
-      <!-- Point 5 -->
-      <div class="animated-box glow-box highlight-box delay-5" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(255, 215, 0, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #FFD700, #FFA500); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          ⚡
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Speed & Accuracy</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          Our AI systems deliver insights with unprecedented speed and accuracy - far more efficiently than traditional consultants.
-        </p>
-      </div>
-
-      <!-- Point 6 -->
-      <div class="animated-box glow-box highlight-box delay-6" style="background: linear-gradient(135deg, rgba(255, 20, 147, 0.3), rgba(199, 21, 133, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(255, 20, 147, 0.5);">
-        <div class="glow-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF1493, #C71585); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-          ❤️
-        </div>
-        <h3 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; text-align: center; margin-bottom: 15px;">Educational Equity Focus</h3>
-        <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.6; font-size: 1em; text-align: center;">
-          Unlike broader AI companies focused solely on profit, our systems are built by people who understand educational inequity and translate insights into technology that serves students.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Closing Statement -->
-    <div class="animated-box glow-box delay-7" style="background-color: rgba(0, 0, 0, 0.4); padding: 35px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-      <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; line-height: 1.7; font-size: 1.1em; text-align: center; margin: 0; font-style: italic;">
-        Every decision in education should be informed by intelligent analysis of learning outcomes. We're building the specialized intelligence platform that helps education leaders and innovators create better learning experiences for every student.
-      </p>
-    </div>
-
-  </div>
-</section>
+  </section>
     
    <!-- About The Founder Section - UPDATED with Two-Box Layout -->
 <section id="about-founder" class="scroll-section slide-right" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
@@ -992,6 +796,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
