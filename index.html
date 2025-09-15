@@ -530,7 +530,13 @@
 .delay-6 { transition-delay: 1.2s; }
 .delay-7 { transition-delay: 1.4s; }
 
-/* Mobile responsiveness for Why Us grid */
+/* Updated mobile responsiveness for 3-column layout */
+@media screen and (max-width: 1024px) {
+  .differentiation-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .differentiation-grid {
     grid-template-columns: 1fr !important;
@@ -540,6 +546,7 @@
   
   .highlight-box {
     padding: 25px 20px !important;
+    min-height: auto !important;
   }
   
   .glow-icon {
@@ -562,9 +569,7 @@
     font-size: 0.9em !important;
   }
 }
-  </style>
-</head>
-<body>
+    
   <!-- Background Slideshow -->
   <div id="bg-slideshow">
     <div class="bg-layer" id="bg1"></div>
@@ -686,7 +691,7 @@
     </div>
 
     <!-- Differentiation Points Grid -->
-    <div class="differentiation-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1400px; margin: 0 auto;">
+    <div class="differentiation-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1400px; margin: 0 auto;">
       
       <!-- Point 1 -->
       <div class="animated-box glow-box highlight-box delay-1" style="background: linear-gradient(135deg, rgba(74, 144, 226, 0.3), rgba(80, 200, 120, 0.3)); padding: 30px; border-radius: 20px; border: 2px solid rgba(74, 144, 226, 0.5);">
@@ -763,7 +768,8 @@
       </p>
     </div>
 
-  </section>
+  </div>
+</section>
     
    <!-- About The Founder Section - UPDATED with Two-Box Layout -->
 <section id="about-founder" class="scroll-section slide-right" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
