@@ -569,6 +569,143 @@
     font-size: 0.9em !important;
   }
 }
+
+    /* Services Section Enhanced Animations */
+@keyframes titleGlow {
+  0% { filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.4)); }
+  100% { filter: drop-shadow(0 0 40px rgba(80, 200, 120, 0.6)); }
+}
+
+@keyframes productFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Product Box Hover Effects */
+.product-side-box:hover {
+  transform: translateY(-15px) scale(1.05) !important;
+  box-shadow: 
+    0 20px 40px rgba(138, 43, 226, 0.3),
+    0 0 60px rgba(74, 144, 226, 0.2) !important;
+  border-color: rgba(138, 43, 226, 0.8) !important;
+}
+
+.product-center-box:hover {
+  transform: translateY(-25px) scale(1.3) !important;
+  box-shadow: 
+    0 40px 80px rgba(50, 205, 50, 0.5),
+    0 0 100px rgba(255, 215, 0, 0.4) !important;
+  border-color: rgba(50, 205, 50, 0.9) !important;
+}
+
+/* Floating Animation */
+.product-side-box,
+.product-center-box {
+  animation: productFloat 6s ease-in-out infinite;
+}
+
+.product-side-box:nth-child(1) { animation-delay: 0s; }
+.product-center-box { animation-delay: -2s; }
+.product-side-box:nth-child(3) { animation-delay: -4s; }
+
+/* Title glow animation */
+#services h1 {
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Responsive Design - Keep side by side always */
+@media screen and (max-width: 968px) {
+  #services > div:last-child {
+    gap: 20px !important;
+  }
+  
+  .product-side-box {
+    flex: 1 !important;
+    max-width: none !important;
+    min-width: 250px !important;
+  }
+  
+  .product-center-box {
+    flex: 1.8 !important;
+    max-width: none !important;
+    min-width: 300px !important;
+    transform: scale(1.1) !important;
+  }
+  
+  #services h1 {
+    font-size: 2.8em !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #services {
+    padding: 60px 15px !important;
+  }
+  
+  #services h1 {
+    font-size: 2.2em !important;
+  }
+  
+  #services > div:last-child {
+    gap: 15px !important;
+  }
+  
+  .product-side-box,
+  .product-center-box {
+    padding: 25px 20px !important;
+  }
+  
+  .product-side-box {
+    min-width: 200px !important;
+  }
+  
+  .product-center-box {
+    min-width: 240px !important;
+    transform: scale(1.05) !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #services h1 {
+    font-size: 1.8em !important;
+  }
+  
+  #services > div:last-child {
+    gap: 10px !important;
+  }
+  
+  .product-side-box,
+  .product-center-box {
+    padding: 20px 15px !important;
+  }
+  
+  .product-side-box {
+    min-width: 150px !important;
+  }
+  
+  .product-center-box {
+    min-width: 180px !important;
+    transform: scale(1) !important;
+  }
+  
+  /* Smaller text on very small screens */
+  .product-side-box h3 {
+    font-size: 1.3em !important;
+  }
+  
+  .product-center-box h3 {
+    font-size: 1.8em !important;
+  }
+  
+  .product-side-box p {
+    font-size: 0.9em !important;
+  }
+  
+  .product-center-box p {
+    font-size: 1.1em !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -625,46 +762,60 @@
     </div>
   </section>
 
- <!-- Services Section - MOVED TO FIRST -->
-<section id="services" class="scroll-section" style="padding: 0; margin: 0; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
+<!-- Replace your existing Services Section with this -->
+
+<!-- Services Section - Modern Design with Floating Effects -->
+<section id="services" class="scroll-section" style="padding: 80px 20px; position: relative; overflow: hidden; width: 100%; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; background-color: transparent; box-shadow: none; border-radius: 0; max-width: none;">
   
-  <!-- Catchphrase Header -->
-  <div style="text-align: center; padding: 40px 20px 20px 20px;">
-    <h1 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 2.5em; margin: 0 0 15px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); line-height: 1.2;">
+  <!-- Header without background box -->
+  <div style="text-align: center; margin-bottom: 80px; position: relative; z-index: 2;">
+    <h1 style="font-size: 3.5em; font-weight: 800; color: transparent; background: linear-gradient(135deg, #4A90E2, #50C878, #FFD700); background-clip: text; -webkit-background-clip: text; text-shadow: 0 0 30px rgba(74, 144, 226, 0.3); margin: 0 0 20px 0; line-height: 1.2;">
       Navigate the Future of Education
     </h1>
-    <p style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-weight: 800; color: white; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); line-height: 1.4;">
+    <p style="font-size: 1.4em; font-weight: 800; color: white; text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); margin: 0 0 30px 0; line-height: 1.4;">
       Where AI meets policy, equity drives innovation, and your edtech vision becomes reality
+    </p>
+    <p style="font-size: 1.2em; font-weight: 800; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 900px; margin: 0 auto; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">
+      Fombra Insight is an educational technology venture utilizing AI systems and machine learning to optimize data flow, identify gaps and compliance issues, increase product effectivity, and predict shifts in resource allocation and regulatory changes. We prioritize educational equity because our species' future is dependent upon the successes, triumphs, and passions of current students, all of whom deserve access to expanded opportunities.
     </p>
   </div>
 
-  <div style="display: flex; width: 100vw; gap: 30px; padding: 40px 20px; box-sizing: border-box;">
+  <!-- Products Grid -->
+  <div style="display: flex; justify-content: center; align-items: flex-end; gap: 40px; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
     
-    <!-- Left Box - Services Description -->
-    <div class="animated-box delay-0" style="flex: 1; background-color: rgba(120, 120, 120, 0.6); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h2 style="font-size: 2em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Services</h2>
-      <p style="font-size: 1.1em; line-height: 1.6; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">
-       Fombra Insight is an educational technology venture utilizing AI systems and machine learning to optimize data flow, identify gaps and compliance issues, increase product effectivity, and predict shifts in resource allocation and regulatory changes. We prioritize educational equity because our species’ future is dependent upon the successes, triumphs, and passions of current students, all of whom deserve access to expanded opportunities. 
+    <!-- Enterprise Product 1 -->
+    <div class="animated-box delay-0 product-side-box" style="flex: 1; max-width: 320px; background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(74, 144, 226, 0.15), rgba(255, 20, 147, 0.1)); border: 2px solid rgba(138, 43, 226, 0.5); border-radius: 25px; padding: 40px 30px; position: relative; backdrop-filter: blur(20px); transition: all 0.4s ease; cursor: pointer; overflow: hidden;">
+      <div style="position: absolute; top: 20px; right: 20px; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: linear-gradient(135deg, #8A2BE2, #4A90E2); color: white; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);">Enterprise</div>
+      <div style="width: 80px; height: 80px; margin: 0 auto 25px; background: linear-gradient(135deg, #4A90E2, #50C878); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5em; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3); transition: all 0.3s ease;">🚀</div>
+      <h3 style="font-size: 1.8em; font-weight: 800; color: white; text-align: center; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">District Intelligence</h3>
+      <p style="font-size: 1.1em; font-weight: 800; color: rgba(255, 255, 255, 0.85); line-height: 1.6; text-align: center;">
+        Advanced analytics platform that transforms district data into actionable insights for strategic decision-making and resource optimization.
       </p>
     </div>
 
-    <!-- Center Box - Mann System -->
-    <div class="animated-box delay-1" style="flex: 1; background-color: rgba(80, 80, 80, 0.7); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Mann System</h3>
-      <ul style="list-style-type: none; padding-left: 0; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800;">
-        <li style="margin-bottom: 15px; color: white; font-size: 0.9em;">
-        AI system that optimally maps out all compliance laws, regulations, statistics, demographics, and risks that are relevant when integrating technology into school districts. 
+    <!-- Mann System (Center/Primary) - LARGER -->
+    <div class="animated-box delay-1 product-center-box" style="flex: 2.2; max-width: 550px; background: linear-gradient(135deg, rgba(50, 205, 50, 0.2), rgba(34, 139, 34, 0.2), rgba(255, 215, 0, 0.15)); border: 2px solid rgba(50, 205, 50, 0.6); border-radius: 25px; padding: 50px 40px; position: relative; backdrop-filter: blur(20px); transition: all 0.4s ease; cursor: pointer; overflow: hidden; transform: scale(1.2);">
+      <div style="position: absolute; top: 20px; right: 20px; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: linear-gradient(135deg, #32CD32, #228B22); color: white; box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);">Primary</div>
+      <div style="width: 120px; height: 120px; margin: 0 auto 30px; background: linear-gradient(135deg, #32CD32, #FFD700); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5em; box-shadow: 0 15px 40px rgba(50, 205, 50, 0.4); transition: all 0.3s ease;">🧠</div>
+      <h3 style="font-size: 2.5em; font-weight: 800; background: linear-gradient(135deg, #32CD32, #FFD700); background-clip: text; -webkit-background-clip: text; color: transparent; text-align: center; margin-bottom: 25px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">Mann System</h3>
+      <p style="font-size: 1.3em; font-weight: 800; color: rgba(255, 255, 255, 0.9); line-height: 1.6; text-align: center;">
+        AI system that optimally maps out all compliance laws, regulations, statistics, demographics, and risks that are relevant when integrating technology into school districts.
       </p>
     </div>
 
-    <!-- Right Box - Product 2 -->
-    <div class="animated-box delay-2" style="flex: 1; background-color: rgba(100, 100, 100, 0.6); padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="font-size: 1.5em; margin-bottom: 20px; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">Product 2</h3>
-      <p style="font-size: 1.2em; font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif; font-weight: 800; color: white; text-align: center;">TBD</p>
+    <!-- Enterprise Product 2 -->
+    <div class="animated-box delay-2 product-side-box" style="flex: 1; max-width: 320px; background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(74, 144, 226, 0.15), rgba(255, 20, 147, 0.1)); border: 2px solid rgba(138, 43, 226, 0.5); border-radius: 25px; padding: 40px 30px; position: relative; backdrop-filter: blur(20px); transition: all 0.4s ease; cursor: pointer; overflow: hidden;">
+      <div style="position: absolute; top: 20px; right: 20px; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: linear-gradient(135deg, #8A2BE2, #4A90E2); color: white; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);">Enterprise</div>
+      <div style="width: 80px; height: 80px; margin: 0 auto 25px; background: linear-gradient(135deg, #4A90E2, #50C878); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5em; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3); transition: all 0.3s ease;">📊</div>
+      <h3 style="font-size: 1.8em; font-weight: 800; color: white; text-align: center; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">Equity Analytics</h3>
+      <p style="font-size: 1.1em; font-weight: 800; color: rgba(255, 255, 255, 0.85); line-height: 1.6; text-align: center;">
+        Comprehensive equity tracking and prediction system that identifies disparities and recommends interventions to ensure equal educational opportunities.
+      </p>
     </div>
 
   </div>
 </section>
+
 
    <!-- Why Us Section - Updated with Dark Theme, Centered -->
    <!-- Enhanced Why Us Section with Glowing Effects -->
