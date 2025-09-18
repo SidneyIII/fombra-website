@@ -1,4 +1,3 @@
-<script>
 // Generate Floating Particles
 function createParticles() {
   const container = document.getElementById('particlesContainer');
@@ -78,5 +77,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 3000);
 });
-</script>
-
