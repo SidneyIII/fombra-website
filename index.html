@@ -14,8 +14,8 @@
   <style>
 /* Hero Logo Styling - Moved higher with reduced bottom margin */
 .hero-logo-image {
-  width: 850px;
-  max-width: 94vw;
+  width: 650px !important; /* Changed from 850px */
+  max-width: 90vw !important; /* Changed from 94vw */
   height: auto;
   margin-bottom: 1px; /* Reduced from 4px to close gap with motto */
   margin-top: -80px; /* Moved higher from -60px */
@@ -712,11 +712,9 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
-    linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  /* Simplified - just the dark background first */
+}
   
   /* Subtle chalkboard texture */
   background-image: 
@@ -816,6 +814,11 @@
 @keyframes constellation {
   0%, 100% { opacity: 0; }
   50% { opacity: 0.3; }
+}
+    
+body {
+  background: none !important;
+  background-color: transparent !important;
 }
     
 </style>
