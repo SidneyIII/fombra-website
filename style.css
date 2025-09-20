@@ -73,6 +73,14 @@ nav a:hover {
   z-index: 2;
   padding: 0; /* Remove bottom spacing that pushes it down */
   pointer-events: none;
+  /* ADD THESE NEW LINES: */
+  background: rgba(0, 0, 0, 0.15); /* Very transparent black background */
+  backdrop-filter: blur(10px); /* Subtle blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 20px; /* Rounded corners */
+  max-width: 900px; /* Limit width */
+  padding: 30px; /* Add some padding around content */
+  margin: 0 auto; /* Center it */
 }
 .hero-logo-content {
   text-align: center;
