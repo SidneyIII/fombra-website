@@ -14,12 +14,11 @@
   <style>
 /* Hero Logo Styling - Moved higher with reduced bottom margin */
 .hero-logo-image {
-  width: 650px !important; /* Changed from 850px */
-  max-width: 90vw !important; /* Changed from 94vw */
+  width: 650px !important;
+  max-width: 90vw !important;
   height: auto;
-  margin-bottom: 1px; /* Reduced from 4px to close gap with motto */
-  margin-top: -30px; /* Changed from -40px to move it down */
-  /* Keep all other properties the same */
+  margin-bottom: -5px; /* Changed from 1px to -5px to close gap more */
+  margin-top: -50px; /* Changed from -30px to move higher */
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
@@ -27,16 +26,16 @@
 .hero-logo-content {
   padding: 5px 20px;
   max-width: 98%;
-  transform: translateY(-70px); /* Moved higher from -50px */
+  transform: translateY(-90px); /* Changed from -70px to move higher */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Hero tagline (motto) styling - reduced top margin */
+/* Hero tagline (motto) styling - reduced margins */
 .hero-tagline {
-  margin: 0px 0 6px 0; /* Reduced top margin from 2px to 0px */
+  margin: -2px 0 4px 0; /* Changed from 0px 0 6px 0 to reduce spacing */
   font-size: 1.4em;
   font-weight: 800;
   color: white;
@@ -44,41 +43,49 @@
   text-align: center;
 }
 
-/* Hero buttons styling - keep same positioning */
+/* Hero buttons styling - reduced top margin */
 .hero-buttons {
-  margin-top: 8px;
+  margin-top: 4px; /* Changed from 8px to reduce spacing */
   gap: 22px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
+  
 @media screen and (max-width: 768px) {
   .hero-logo-image {
-    margin-bottom: 1px; /* Reduced spacing */
-    margin-top: -60px; /* Moved higher from -45px */
+    margin-bottom: -3px; /* Changed for mobile */
+    margin-top: -80px; /* Changed from -60px to move higher */
   }
   
   .hero-logo-content {
-    transform: translateY(-50px); /* Moved higher from -35px */
+    transform: translateY(-70px); /* Changed from -50px to move higher */
   }
   
   .hero-tagline {
-    margin: 0px 0 5px 0; /* Reduced top margin */
+    margin: -2px 0 3px 0; /* Reduced margins */
+  }
+  
+  .hero-buttons {
+    margin-top: 3px; /* Reduced spacing */
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-logo-image {
-    margin-bottom: 0px; /* Minimal spacing on small screens */
-    margin-top: -50px; /* Moved higher from -35px */
+    margin-bottom: -2px;
+    margin-top: -70px; /* Changed from -50px to move higher */
   }
   
   .hero-logo-content {
-    transform: translateY(-35px); /* Moved higher from -25px */
+    transform: translateY(-55px); /* Changed from -35px to move higher */
   }
   
   .hero-tagline {
-    margin: 0px 0 4px 0;
+    margin: -1px 0 3px 0; /* Reduced margins */
+  }
+  
+  .hero-buttons {
+    margin-top: 2px; /* Reduced spacing */
   }
 }
 
